@@ -8,7 +8,7 @@
 export default {
   name: "app",
   async created() {
-    await this.$store.dispatch("init", { token: this.token })
+    // await this.$store.dispatch("init", { token: this.token })
   },
 }
 </script>

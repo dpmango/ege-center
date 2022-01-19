@@ -1,5 +1,4 @@
 import { getApiService } from "@/api/external"
-import { getSettingsService } from "@/api/meta"
 
 const state = () => ({
   opened: false,
