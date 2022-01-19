@@ -1,0 +1,58 @@
+$sm: 480;
+$md: 767;
+$lg: 992;
+$xl: 1440;
+
+// FONTS
+$baseFont: "Helvetica Neue", "Helvetica", "Roboto", "Segoe UI", "Ubuntu", "Cantarell", "Arial",
+  sans-serif;
+$systemFont: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Ubuntu",
+  "Cantarell", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+// OPTIONS
+$transitionSpeed: 0.25s;
+$ease: ease-in-out;
+
+// COLORS
+// Color-names https://htmlcolorcodes.com/color-names/
+$fontColor: #000;
+$colorGray: #979797;
+$baseColor: #3a3a3a;
+$colorPrimary: #e0322c;
+$colorPrimaryHover: darken(#e0322c, 10%);
+$colorAccent: #b5c6ff;
+$colorGreen: #85cb7a;
+$colorRed: #ff1111;
+$colorRedHover: lighten($colorRed, 15%);
+$borderColor: #e8e8e8;
+$colorBg: #f5f7fb;
+
+// SOCIAL colors
+$twitter: #00aced;
+$facebook: #3b5998;
+$googleplus: #dd4b39;
+$pinterest: #cb2027;
+$linkedin: #007bb6;
+$youtube: #b00;
+$vimeo: #1ab7ea;
+$tumblr: #32506d;
+$instagram: #bc2a8d;
+$flickr: #ff0084;
+$dribbble: #ea4c89;
+$quora: #a82400;
+$foursquare: #0072b1;
+$forrst: #5b9a68;
+$vk: #45668e;
+$wordpress: #21759b;
+$stumbleupon: #eb4823;
+$yahoo: #7b0099;
+$blogger: #fb8f3d;
+$soundcloud: #ff3a00;
+
+// 6-col grid
+$col1: 16.666667%;
+$col2: 33.333333%;
+$col3: 50%;
+$col4: 66.666667%;
+$col5: 83.333333%;
+$col6: 100%;
