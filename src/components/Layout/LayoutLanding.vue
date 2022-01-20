@@ -23,6 +23,7 @@ export default {
   flex-direction: column;
   &__content {
     flex: 1 0 auto;
+    padding-top: 195px;
   }
 }
 </style>

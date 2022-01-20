@@ -1,3 +1,3 @@
-import LayoutLanding from "./Education"
+import StudyPlan from "./StudyPlan"
 
-export { LayoutLanding }
+export { StudyPlan }

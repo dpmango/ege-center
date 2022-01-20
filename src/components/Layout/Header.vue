@@ -1,44 +1,55 @@
 <template>
-  <header class="header">
-    <div class="container">
-      <div class="header__wrapper">
-        <div class="header__logo">
-          <img src="@/assets/images/layout/logo.svg" alt="site logo" />
-          <span>ЕГЭ Центр</span>
-        </div>
-        <div class="header__subtitle">
-          Сеть центров по подготовке школьников 9-11 класса к ОГЭ и ЕГЭ
-        </div>
-
-        <div class="header__cta">
-          <div class="header__cta-contacts">
-            <a class="header__phone" href="tel:+74956468592"> +7 (495) 646-85-92 </a>
-            <div class="header__times">Пн-сб 10:00-19:00</div>
+  <header class="header" :class="[scroll.scrolled && '--scrolled', scroll.direction]">
+    <div class="header__wrapper">
+      <div class="container">
+        <div class="header__top">
+          <div class="header__logo">
+            <img src="@/assets/images/layout/logo.svg" alt="site logo" />
+            <span>ЕГЭ Центр</span>
+          </div>
+          <div class="header__subtitle">
+            Сеть центров по подготовке школьников 9-11 класса к ОГЭ и ЕГЭ
           </div>
 
-          <div class="header__cta-action">
-            <UiButton theme="outline" outline>Записаться на курсы</UiButton>
+          <div class="header__cta">
+            <div class="header__cta-contacts">
+              <a class="header__phone" href="tel:+74956468592"> +7 (495) 646-85-92 </a>
+              <div class="header__times">Пн-сб 10:00-19:00</div>
+            </div>
+
+            <div class="header__cta-action">
+              <UiButton theme="outline" outline>Записаться на курсы</UiButton>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="header__menu">
-        <ul class="header__menu-list">
-          <li v-for="(menuElement, idx) in menu" :key="idx">
-            <router-link :to="menuElement.to">
-              {{ menuElement.label }}
-            </router-link>
-          </li>
-        </ul>
+        <div class="header__menu">
+          <div class="container">
+            <ul class="header__menu-list">
+              <li v-for="(menuElement, idx) in menu" :key="idx">
+                <router-link :to="menuElement.to">
+                  {{ menuElement.label }}
+                </router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import throttle from "lodash/throttle"
+
 export default {
   data() {
     return {
+      scroll: {
+        scrolled: false,
+        lastScroll: 0,
+        direction: "down",
+      },
       menu: [
         { to: "/", label: "Курсы" },
         { to: "/", label: "Школа-экстернат" },
@@ -50,15 +61,59 @@ export default {
       ],
     }
   },
+  created() {
+    this.scrollWithThrottle = throttle(this.onScroll, 200)
+  },
+  mounted() {
+    window.addEventListener("scroll", this.scrollWithThrottle, false)
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.scrollWithThrottle, false)
+  },
+  methods: {
+    onScroll() {
+      const scrollY = window.scrollY
+
+      this.scroll.scrolled = scrollY > 0
+
+      if (this.scroll.lastScroll > scrollY) {
+        this.scroll.direction = "up"
+      } else {
+        this.scroll.direction = "down"
+      }
+
+      this.scroll.lastScroll = scrollY
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  will-change: transform;
+  // backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.25s $ease;
   &__wrapper {
+    position: relative;
+    background: white;
+    padding-bottom: 104px;
+    will-change: padding;
+    transition: padding 0.25s $ease;
+    // backface-visibility: hidden;
+  }
+  &__top {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
-    padding: 34px 0 24px;
+    padding: 30px 0 10px;
+    background: white;
   }
   &__logo {
     flex: 0 0 auto;
@@ -111,7 +166,7 @@ export default {
   &__phone {
     display: inline-block;
     font-weight: 900;
-    padding: 5px 0;
+    padding: 3px 0;
     transition: color 0.25s $ease;
     &:hover {
       color: $colorPrimary;
@@ -123,8 +178,13 @@ export default {
   }
 
   &__menu {
-    position: relative;
-    padding: 12px 0 24px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 26px 0 24px;
+    transition: transform 0.25s $ease, padding 0.25s $ease, opacity 0.15s ease-out;
   }
 
   &__menu-list {
@@ -162,6 +222,30 @@ export default {
         &::after {
           opacity: 1;
         }
+      }
+    }
+  }
+  &.--scrolled {
+    position: fixed;
+    transform: translate(0, -20px);
+    border-bottom: 1px solid $borderColor;
+    .header__wrapper {
+      padding-bottom: 0;
+    }
+    .header__menu {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    &.up {
+      .header__wrapper {
+        padding-bottom: 74px;
+      }
+
+      .header__menu {
+        transform: none;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        opacity: 1;
       }
     }
   }

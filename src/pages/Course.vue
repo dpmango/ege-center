@@ -1,6 +1,7 @@
 <template>
   <LayoutLanding>
     <Hero />
+    <StudyPlan />
   </LayoutLanding>
 </template>
 
