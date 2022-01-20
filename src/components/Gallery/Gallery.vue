@@ -52,8 +52,9 @@ export default {
 <style lang="scss" scoped>
 .gallery {
   position: relative;
-  padding: 110px 0 95px;
-  margin-bottom: 110px;
+  overflow: hidden;
+  padding: 110px 0 115px;
+  margin-bottom: 90px;
   &__slider {
     padding: 0px;
     overflow: visible;
@@ -79,7 +80,7 @@ export default {
 
 .swiperNav {
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   z-index: 2;
   left: 0;
   right: 0;

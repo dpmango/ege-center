@@ -10,9 +10,14 @@ const router = new Router({
     return { x: 0, y: 0 }
   },
   routes: [
+    { path: "/", redirect: "/course" },
     {
-      path: "/",
+      path: "/course",
       component: () => import("@/pages/Course"),
+    },
+    {
+      path: "*",
+      component: () => import("@/pages/NotFound"),
     },
   ],
 })

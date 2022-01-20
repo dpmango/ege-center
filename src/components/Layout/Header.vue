@@ -4,7 +4,30 @@
       <div class="container">
         <div class="header__top">
           <div class="header__logo">
-            <img src="@/assets/images/layout/logo.svg" alt="site logo" />
+            <svg
+              width="49"
+              height="36"
+              viewBox="0 0 49 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M49 8.18115C49 8.18115 41.5 8.18116 36.5 9C31.5 9.81884 26 13 26 13V36C26 36 30.9897 33.3827 35 33.5C38.6349 33.6063 42 36 42.5 36C43 36 49 8.18115 49 8.18115Z"
+                fill="#BEAC83"
+              />
+              <path
+                d="M0 8.18115C0 8.18115 7.5 8.18116 12.5 9C17.5 9.81884 23 13 23 13V36C23 36 18.0103 33.3827 14 33.5C10.3651 33.6063 7 36 6.5 36C6 36 0 8.18115 0 8.18115Z"
+                fill="#FFC423"
+              />
+              <path
+                d="M42.5 0.54C42.5 0.54 38.5 -0.96 33.5 1.04C28.5 3.04 25 8.53998 25 8.53998V11C25 11 28 8.5 33.5 7C39 5.5 42.5 5.5 42.5 5.5V0.54Z"
+                fill="#916F5D"
+              />
+              <path
+                d="M6.5 0.54C6.5 0.54 10.5 -0.96 15.5 1.04C20.5 3.04 24 8.53998 24 8.53998V11C24 11 21 8.5 15.5 7C10 5.5 6.5 5.5 6.5 5.5V0.54Z"
+                fill="#FE8A1E"
+              />
+            </svg>
             <span>ЕГЭ Центр</span>
           </div>
           <div class="header__subtitle">
@@ -51,13 +74,13 @@ export default {
         direction: "down",
       },
       menu: [
-        { to: "/", label: "Курсы" },
-        { to: "/", label: "Школа-экстернат" },
-        { to: "/", label: "Преподаватели" },
-        { to: "/", label: "Вопрос-ответ" },
-        { to: "/", label: "Документы" },
-        { to: "/", label: "Стоимость" },
-        { to: "/", label: "Адреса" },
+        { to: "/course", label: "Курсы" },
+        { to: "/school", label: "Школа-экстернат" },
+        { to: "/teachers", label: "Преподаватели" },
+        { to: "/faq", label: "Вопрос-ответ" },
+        { to: "/docs", label: "Документы" },
+        { to: "/price", label: "Стоимость" },
+        { to: "/contact", label: "Адреса" },
       ],
     }
   },
@@ -121,7 +144,8 @@ export default {
     display: flex;
     align-items: center;
     font-size: 0;
-    img {
+    img,
+    svg {
       max-width: 49px;
       margin-right: 12px;
     }
@@ -218,6 +242,12 @@ export default {
         transition: opacity 0.25s $ease;
       }
       &:hover {
+        color: $fontColor;
+        &::after {
+          opacity: 1;
+        }
+      }
+      &.router-link-exact-active {
         color: $fontColor;
         &::after {
           opacity: 1;
