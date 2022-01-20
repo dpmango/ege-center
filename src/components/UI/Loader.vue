@@ -35,18 +35,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#kolesoWidget {
-  .loader {
-    &.block {
-      display: flex;
-      justify-content: center;
-      margin: 16px 0;
-    }
-  }
-
-  .v-spinner {
+.loader {
+  &.block {
     display: flex;
-    font-size: 0;
+    justify-content: center;
+    margin: 16px 0;
   }
+}
+
+.v-spinner {
+  display: flex;
+  font-size: 0;
 }
 </style>

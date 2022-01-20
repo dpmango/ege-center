@@ -1,10 +1,10 @@
 @import "utilities/index";
+
+@import "vendor/normalize";
+@import "swiper/src/swiper.scss";
+// @import "swiper/components/scrollbar/scrollbar.scss";
+
+@import "layout/grid";
 @import "layout/general";
 
-#kolesoWidget {
-  @import "vendor/normalize";
-
-  @import "layout/grid";
-  @import "swiper/src/swiper.scss";
-  // @import "swiper/components/scrollbar/scrollbar.scss";
-}
+@import "elements/typography";

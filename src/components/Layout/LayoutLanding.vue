@@ -1,13 +1,20 @@
 <template>
   <div class="page">
     <div class="page__content">
+      <Header />
       <slot />
+      <Footer />
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import Header from "./Header"
+import Footer from "./Footer"
+
+export default {
+  components: { Header, Footer },
+}
 </script>
 
 <style lang="scss" scoped>

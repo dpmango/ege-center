@@ -112,153 +112,151 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#kolesoWidget {
-  .button {
-    -webkit-appearance: none;
-    position: relative;
+.button {
+  -webkit-appearance: none;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 28px;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.25s $ease, color 0.25s $ease;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    font-size: 0px;
+    transition: color 0.25s $ease, opacity 0.25s $ease;
+    .svg-icon {
+      font-size: 16px;
+    }
+    &.left {
+      margin-right: 8px;
+    }
+    &.right {
+      margin-left: 8px;
+    }
+  }
+
+  &__text {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
-    padding: 13px 19px 14px;
-    border: 1px solid transparent;
-    box-sizing: border-box;
-    border-radius: 6px;
-    font-weight: 500;
-    letter-spacing: 0.457143px;
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: none;
-    transition: background 0.25s $ease, color 0.25s $ease;
-    &:focus,
+    ::v-deep .checkbox {
+      pointer-events: none;
+    }
+  }
+
+  &.primary {
+    background: $colorPrimary;
+    color: #fff;
+    border-color: transparent;
+
+    &:hover {
+      background: $colorPrimaryHover;
+    }
     &:active {
-      outline: none;
+      background: $colorPrimaryHover;
     }
-
-    &__icon {
-      flex: 0 0 auto;
-      font-size: 0px;
-      transition: color 0.25s $ease, opacity 0.25s $ease;
-      .svg-icon {
-        font-size: 16px;
-      }
-      &.left {
-        margin-right: 8px;
-      }
-      &.right {
-        margin-left: 8px;
-      }
-    }
-
-    &__text {
-      display: inline-flex;
-      align-items: center;
-      ::v-deep .checkbox {
-        pointer-events: none;
-      }
-    }
-
-    &.primary {
+  }
+  &.outline {
+    color: $colorPrimary;
+    background: transparent;
+    border-color: $colorPrimary;
+    &:hover,
+    &:active {
       background: $colorPrimary;
-      color: #fff;
-      border-color: transparent;
-
-      &:hover {
-        background: $colorPrimaryHover;
-      }
-      &:active {
-        background: $colorPrimaryHover;
-      }
+      color: white;
     }
-    &.outline {
-      color: $fontColor;
-      background: transparent;
-      border-color: $colorPrimary;
-      &:hover,
-      &:active {
-        border-color: $colorPrimaryHover;
+    &:active {
+      background: rgba($colorPrimaryHover, 0.2);
+    }
+  }
+  &.danger {
+    color: white;
+    background: $colorRed;
+    border-color: transparent;
+    &:hover {
+      background: rgba($colorRed, 0.8);
+    }
+    &:active {
+      background: rgba($colorRed, 0.9);
+    }
+  }
+  &.success {
+    color: white;
+    background: $colorGreen;
+    border-color: transparent;
+    &:hover {
+      background: rgba($colorGreen, 0.8);
+    }
+    &:active {
+      background: rgba($colorGreen, 0.9);
+    }
+  }
+
+  &.clear {
+    background: transparent;
+    border-color: transparent;
+    color: $fontColor;
+    .button__icon {
+      color: #dadada;
+    }
+    &:hover {
+      background: $colorBg;
+      .button__icon {
         color: $colorPrimary;
       }
-      &:active {
-        background: rgba($colorPrimaryHover, 0.2);
-      }
     }
-    &.danger {
-      color: white;
-      background: $colorRed;
-      border-color: transparent;
-      &:hover {
-        background: rgba($colorRed, 0.8);
-      }
-      &:active {
-        background: rgba($colorRed, 0.9);
-      }
+    &:active {
+      background: darken($colorBg, 5%);
     }
-    &.success {
-      color: white;
-      background: $colorGreen;
-      border-color: transparent;
-      &:hover {
-        background: rgba($colorGreen, 0.8);
-      }
-      &:active {
-        background: rgba($colorGreen, 0.9);
-      }
-    }
+  }
 
-    &.clear {
-      background: transparent;
-      border-color: transparent;
-      color: $fontColor;
-      .button__icon {
-        color: #dadada;
-      }
-      &:hover {
-        background: $colorBg;
-        .button__icon {
-          color: $colorPrimary;
-        }
-      }
-      &:active {
-        background: darken($colorBg, 5%);
-      }
-    }
+  &.small {
+    font-size: 14px;
+    padding: 9px 16px;
+    border-radius: 6px;
+  }
+  &.big {
+    font-size: 16px;
+    padding: 22px 38px;
+  }
 
-    &.small {
-      font-size: 14px;
-      padding: 9px 16px;
-      border-radius: 6px;
-    }
-    &.big {
-      font-size: 18px;
-      padding: 17px 24px;
-    }
+  &.block {
+    display: block;
+    width: 100%;
+  }
 
-    &.block {
-      display: block;
-      width: 100%;
-    }
+  &.no-padding {
+    padding: 0;
+  }
 
-    &.no-padding {
-      padding: 0;
-    }
+  &[disabled] {
+    background: $borderColor;
+    color: white;
+    pointer-events: none;
+    transition: none;
+  }
 
-    &[disabled] {
-      background: $borderColor;
-      color: white;
-      pointer-events: none;
-      transition: none;
-    }
-
-    .loader {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    &.is-loading {
-      color: transparent !important;
-    }
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.is-loading {
+    color: transparent !important;
   }
 }
 </style>

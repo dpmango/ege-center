@@ -14,16 +14,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#kolesoWidget {
-  .error {
-    background: rgba($colorRed, 0.1);
-    border: 1px solid $colorRed;
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 500;
-    color: $colorRed;
-    text-align: center;
-  }
+.error {
+  background: rgba($colorRed, 0.1);
+  border: 1px solid $colorRed;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $colorRed;
+  text-align: center;
 }
 </style>

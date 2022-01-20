@@ -65,13 +65,11 @@ export default {
 </script>
 
 <style lang="scss">
-#kolesoWidget {
-  .svg-icon {
-    display: inline-block;
-    font-style: normal;
-    fill: currentColor;
-    height: 1em;
-    margin: 0;
-  }
+.svg-icon {
+  display: inline-block;
+  font-style: normal;
+  fill: currentColor;
+  height: 1em;
+  margin: 0;
 }
 </style>

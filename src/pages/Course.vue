@@ -1,10 +1,12 @@
 <template>
   <LayoutLanding>
-    <div class="h1">hello world</div>
+    <Hero />
   </LayoutLanding>
 </template>
 
 <script>
+import content from "./JSON_data/course"
+
 export default {
   name: "Course",
 }

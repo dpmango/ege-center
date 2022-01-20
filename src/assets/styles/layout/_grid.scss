@@ -1,3 +1,12 @@
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -46,6 +55,41 @@
   width: 100%;
   flex-basis: $col6;
   max-width: $col6;
+}
+
+.col-7 {
+  width: 100%;
+  flex-basis: $col7;
+  max-width: $col7;
+}
+
+.col-8 {
+  width: 100%;
+  flex-basis: $col8;
+  max-width: $col8;
+}
+
+.col-9 {
+  width: 100%;
+  flex-basis: $col9;
+  max-width: $col9;
+}
+
+.col-10 {
+  width: 100%;
+  flex-basis: $col10;
+  max-width: $col10;
+}
+.col-11 {
+  width: 100%;
+  flex-basis: $col11;
+  max-width: $col11;
+}
+
+.col-12 {
+  width: 100%;
+  flex-basis: $col12;
+  max-width: $col12;
 }
 
 @include r($md) {
@@ -98,6 +142,31 @@ $sizes: (
       max-width: $col6;
     }
 
+    .col-#{$size}-7 {
+      flex-basis: $col7;
+      max-width: $col7;
+    }
+
+    .col-#{$size}-8 {
+      flex-basis: $col8;
+      max-width: $col8;
+    }
+    .col-#{$size}-9 {
+      flex-basis: $col9;
+      max-width: $col9;
+    }
+    .col-#{$size}-10 {
+      flex-basis: $col10;
+      max-width: $col10;
+    }
+    .col-#{$size}-11 {
+      flex-basis: $col11;
+      max-width: $col11;
+    }
+    .col-#{$size}-12 {
+      flex-basis: $col12;
+      max-width: $col12;
+    }
     .col-#{$size}-auto {
       flex-basis: auto;
       max-width: min-content;

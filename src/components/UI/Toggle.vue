@@ -64,93 +64,91 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#kolesoWidget {
-  .toggle {
+.toggle {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  cursor: pointer;
+  &.no-label {
+    display: block;
+  }
+  &__label {
     position: relative;
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
+    z-index: 2;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 1.5;
+    padding-right: 16px;
     cursor: pointer;
-    &.no-label {
-      display: block;
+    transition: opacity 0.25s $ease;
+    &:hover {
+      opacity: 0.8;
     }
-    &__label {
-      position: relative;
-      z-index: 2;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 12px;
-      line-height: 1.5;
-      padding-right: 16px;
-      cursor: pointer;
-      transition: opacity 0.25s $ease;
-      &:hover {
-        opacity: 0.8;
-      }
+  }
+  &__option {
+    font-weight: bold;
+    font-size: 12px;
+    color: $colorGray;
+    text-transform: uppercase;
+    transition: color 0.25s $ease;
+    &.active {
+      color: $colorPrimary;
     }
-    &__option {
-      font-weight: bold;
-      font-size: 12px;
-      color: $colorGray;
-      text-transform: uppercase;
-      transition: color 0.25s $ease;
-      &.active {
-        color: $colorPrimary;
-      }
-    }
-    &__input {
-      position: relative;
-      input {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        width: 0.1px;
-        height: 0.1px;
-        overflow: hidden;
-        &:checked + .toggle__input-box {
-          &::after {
-            left: 32px;
-          }
+  }
+  &__input {
+    position: relative;
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 0.1px;
+      height: 0.1px;
+      overflow: hidden;
+      &:checked + .toggle__input-box {
+        &::after {
+          left: 32px;
         }
       }
     }
-    &__input-box {
-      position: relative;
-      width: 48px;
-      height: 18px;
-      background: white;
-      border: 0;
-      border-radius: 100px;
-      &::after {
-        display: inline-block;
-        content: " ";
-        box-sizing: border-box;
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        width: 14px;
-        height: 14px;
-        background: #e0322c;
-        border-radius: 50%;
-        transition: 0.25s $ease;
-      }
+  }
+  &__input-box {
+    position: relative;
+    width: 48px;
+    height: 18px;
+    background: white;
+    border: 0;
+    border-radius: 100px;
+    &::after {
+      display: inline-block;
+      content: " ";
+      box-sizing: border-box;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 14px;
+      height: 14px;
+      background: #e0322c;
+      border-radius: 50%;
+      transition: 0.25s $ease;
     }
-    &.withOptions {
-      .toggle {
-        &__label {
-          padding-right: 4px;
-        }
-        &__input {
-          margin-left: 8px;
-          margin-right: 8px;
-        }
-        &__input-box {
-          background: $colorPrimary;
+  }
+  &.withOptions {
+    .toggle {
+      &__label {
+        padding-right: 4px;
+      }
+      &__input {
+        margin-left: 8px;
+        margin-right: 8px;
+      }
+      &__input-box {
+        background: $colorPrimary;
+        border-color: transparent;
+        &::after {
           border-color: transparent;
-          &::after {
-            border-color: transparent;
-          }
         }
       }
     }

@@ -1,3 +1,3 @@
-import LandingLayout from "./LandingLayout"
+import LayoutLanding from "./LayoutLanding"
 
-export { LandingLayout }
+export { LayoutLanding }

@@ -156,215 +156,213 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#kolesoWidget {
-  .input {
-    position: relative;
-    &__label {
-      display: block;
-      font-size: 18px;
-      font-weight: normal;
-      line-height: (21 / 18);
-      font-family: $baseFont;
-      color: $fontColor;
-      margin-bottom: 6px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      ::v-deep i {
-        color: $colorPrimary;
-      }
-    }
-
-    &__input {
-      position: relative;
-      z-index: 1;
-      input,
-      textarea {
-        -webkit-appearance: none;
-        display: block;
-        width: 100%;
-        padding: 13px 18px 13px;
-        border: 1.5px solid $borderColor;
-        background: white;
-        border-radius: 4px;
-        font-family: $baseFont;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: normal;
-        line-height: 1.2;
-        color: $baseColor;
-        transition: border 0.25s $ease, color 0.25s $ease, background 0.25s $ease;
-        &::placeholder {
-          color: $colorGray;
-        }
-        &:focus,
-        &:active {
-          outline: none;
-          border-color: $colorGray;
-        }
-        &:hover {
-          // background-color: #f7f6f7;
-          border-color: $colorGray;
-        }
-        &[readonly],
-        &[disabled] {
-          color: $baseColor;
-          background: #ededed;
-          border-color: #ededed;
-          &:focus,
-          &:active {
-            border-color: #ededed;
-          }
-        }
-      }
-      textarea {
-        resize: vertical;
-      }
-      &.is-iconed {
-        input,
-        textarea {
-          padding-right: 45px;
-        }
-        &.left {
-          input,
-          textarea {
-            padding-left: 45px;
-            padding-right: 14px;
-          }
-        }
-      }
-      &.is-clearable {
-        input,
-        textarea {
-          padding-right: 45px;
-        }
-        .input__clear {
-          opacity: 1;
-          pointer-events: all;
-        }
-        &.is-iconed {
-          .input__icon:not(.left) {
-            opacity: 0;
-            pointer-events: none;
-          }
-        }
-      }
-    }
-    &__icon {
-      position: absolute;
-      z-index: 2;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 0;
-      pointer-events: none;
-      &.left {
-        left: 15px;
-        right: auto;
-      }
-      .svg-icon {
-        font-size: 16px;
-        color: $colorPrimary;
-      }
-    }
-    &__clear {
-      position: absolute;
-      z-index: 2;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 14px 16px 14px 16px;
+.input {
+  position: relative;
+  &__label {
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: (21 / 18);
+    font-family: $baseFont;
+    color: $fontColor;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    ::v-deep i {
       color: $colorPrimary;
-      font-size: 0px;
-      cursor: pointer;
-      opacity: 0;
-      pointer-events: none;
-      transition: color 0.25s $ease;
-      .svg-icon {
-        font-size: 16px;
+    }
+  }
+
+  &__input {
+    position: relative;
+    z-index: 1;
+    input,
+    textarea {
+      -webkit-appearance: none;
+      display: block;
+      width: 100%;
+      padding: 13px 18px 13px;
+      border: 1.5px solid $borderColor;
+      background: white;
+      border-radius: 4px;
+      font-family: $baseFont;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.2;
+      color: $fontColor;
+      transition: border 0.25s $ease, color 0.25s $ease, background 0.25s $ease;
+      &::placeholder {
+        color: $colorGray;
+      }
+      &:focus,
+      &:active {
+        outline: none;
+        border-color: $colorGray;
       }
       &:hover {
+        // background-color: #f7f6f7;
+        border-color: $colorGray;
+      }
+      &[readonly],
+      &[disabled] {
         color: $fontColor;
+        background: #ededed;
+        border-color: #ededed;
+        &:focus,
+        &:active {
+          border-color: #ededed;
+        }
       }
     }
-    &__error {
-      margin-top: 10px;
-      font-size: 14px;
-      line-height: 120%;
+    textarea {
+      resize: vertical;
+    }
+    &.is-iconed {
+      input,
+      textarea {
+        padding-right: 45px;
+      }
+      &.left {
+        input,
+        textarea {
+          padding-left: 45px;
+          padding-right: 14px;
+        }
+      }
+    }
+    &.is-clearable {
+      input,
+      textarea {
+        padding-right: 45px;
+      }
+      .input__clear {
+        opacity: 1;
+        pointer-events: all;
+      }
+      &.is-iconed {
+        .input__icon:not(.left) {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+  &__icon {
+    position: absolute;
+    z-index: 2;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0;
+    pointer-events: none;
+    &.left {
+      left: 15px;
+      right: auto;
+    }
+    .svg-icon {
+      font-size: 16px;
       color: $colorPrimary;
-      & + .input__helper {
-        margin-top: 0;
+    }
+  }
+  &__clear {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 14px 16px 14px 16px;
+    color: $colorPrimary;
+    font-size: 0px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: color 0.25s $ease;
+    .svg-icon {
+      font-size: 16px;
+    }
+    &:hover {
+      color: $fontColor;
+    }
+  }
+  &__error {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 120%;
+    color: $colorPrimary;
+    & + .input__helper {
+      margin-top: 0;
+    }
+  }
+  &__helper {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 120%;
+    color: $colorGray;
+  }
+  &.has-error {
+    .input__input {
+      input,
+      textarea {
+        border-color: $colorRed;
       }
     }
-    &__helper {
-      margin-top: 10px;
+    .input__label {
+      color: $colorRed;
+    }
+  }
+
+  &.dynamic {
+    .input__label {
+      position: absolute;
+      top: 19px;
+      left: 16px;
       font-size: 14px;
-      line-height: 120%;
+      font-weight: 500;
       color: $colorGray;
+      z-index: 2;
+      pointer-events: none;
+      transition: all 0.25s ease-in-out;
+    }
+    .input__input {
+      input,
+      textarea {
+        padding-top: 23px;
+        padding-bottom: 10px;
+      }
+    }
+    &.is-focused {
+      .input__label {
+        top: 8px;
+        font-size: 11px;
+      }
     }
     &.has-error {
-      .input__input {
-        input,
-        textarea {
-          border-color: $colorRed;
-        }
-      }
       .input__label {
-        color: $colorRed;
+        top: 8px;
+        font-size: 11px;
       }
     }
-
-    &.dynamic {
+    &.is-iconed.left {
       .input__label {
-        position: absolute;
-        top: 19px;
-        left: 16px;
-        font-size: 14px;
-        font-weight: 500;
-        color: $colorGray;
-        z-index: 2;
-        pointer-events: none;
-        transition: all 0.25s ease-in-out;
-      }
-      .input__input {
-        input,
-        textarea {
-          padding-top: 23px;
-          padding-bottom: 10px;
-        }
-      }
-      &.is-focused {
-        .input__label {
-          top: 8px;
-          font-size: 11px;
-        }
-      }
-      &.has-error {
-        .input__label {
-          top: 8px;
-          font-size: 11px;
-        }
-      }
-      &.is-iconed.left {
-        .input__label {
-          left: 45px;
-        }
+        left: 45px;
       }
     }
   }
+}
 
-  input[type="search"]::-webkit-search-decoration,
-  input[type="search"]::-webkit-search-cancel-button,
-  input[type="search"]::-webkit-search-results-button,
-  input[type="search"]::-webkit-search-results-decoration {
-    -webkit-appearance: none;
-  }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
 
-  @include r($md) {
-    .input {
-      &__label {
-        font-size: 16px;
-      }
+@include r($md) {
+  .input {
+    &__label {
+      font-size: 16px;
     }
   }
 }

@@ -1,0 +1,120 @@
+// titles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.h1-title,
+.h2-title,
+.h3-title,
+.h4-title,
+.h5-title,
+.h6-title {
+  font-weight: bold;
+}
+.h1-title {
+  font-size: 50px;
+}
+.h2-title {
+  font-size: 40px;
+}
+.h3-title {
+  font-size: 26px;
+}
+.h4-title {
+  font-size: 20px;
+}
+.h5-title {
+  font-size: 18px;
+}
+.h6-title {
+  font-size: 16px;
+}
+
+// paragraphs
+.p-main {
+  font-size: 18px;
+}
+
+p {
+  margin: 0;
+  + p {
+    margin-top: 1em;
+  }
+}
+
+// little inline helpers
+.f-400 {
+  font-weight: normal;
+}
+.f-500 {
+  font-weight: 500;
+}
+.f-600 {
+  font-weight: 600;
+}
+.f-700 {
+  font-weight: 700;
+}
+.f-900 {
+  font-weight: 900;
+}
+
+// colors
+.c-font {
+  color: $fontColor;
+}
+.c-gray {
+  color: $colorGray;
+}
+.c-light {
+  color: $colorLight;
+}
+.c-primary {
+  color: $colorPrimary;
+}
+.c-accent {
+  color: $colorAccent;
+}
+.c-green {
+  color: $colorGreen;
+}
+.c-red {
+  color: $colorRed;
+}
+
+// align utils
+.tac {
+  text-align: center;
+}
+.tal {
+  text-align: left;
+}
+.tar {
+  text-align: right;
+}
+
+// tables
+.table-scroller {
+  display: flex;
+  position: relative;
+  overflow-x: auto;
+  padding-bottom: 15px;
+  margin-bottom: -15px;
+  margin-left: -30px;
+  margin-right: -30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  &.has-scrollbar {
+    &::after {
+      flex: 0 0 30px;
+      width: 30px;
+      display: inline-block;
+      content: " ";
+    }
+  }
+}
