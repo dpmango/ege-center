@@ -1,9 +1,10 @@
 <template>
   <LayoutLanding>
-    <!-- <Hero />
+    <Hero />
     <StudyPlan />
     <Schedule />
-    <Features /> -->
+    <Features />
+    <Reports />
 
     <CtaSignup />
     <Gallery :slides="content.gallery" />

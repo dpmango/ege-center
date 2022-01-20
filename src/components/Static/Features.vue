@@ -41,7 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 .features {
-  padding: 102px 0 105px 0;
+  padding: 102px 0 210px 0;
   background: $colorBg;
   &__wrapper {
     align-items: center;
