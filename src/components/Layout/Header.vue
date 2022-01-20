@@ -124,7 +124,7 @@ export default {
 
   &__menu {
     position: relative;
-    padding: 16px 0 26px;
+    padding: 12px 0 24px;
   }
 
   &__menu-list {

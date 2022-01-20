@@ -58,8 +58,10 @@ export default {
   background: $colorBg;
   &__content {
     flex: 0 0 50%;
-    padding: 40px 60px 70px calc((100vw - 1440px) / 2 + 80px);
-    min-height: 570px;
+    padding: 40px 60px 70px calc((100vw - 1280px) / 2 + 32px);
+    height: calc(100vh - 190px);
+    min-height: 440px;
+    max-height: 570px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -161,10 +163,10 @@ export default {
   }
 }
 
-@include r(1440) {
+@include r(1280) {
   .hero {
     &__content {
-      padding-left: 80px;
+      padding-left: 32px;
     }
   }
 }
