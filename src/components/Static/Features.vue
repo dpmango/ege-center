@@ -1,5 +1,5 @@
 <template>
-  <div class="features">
+  <section class="features">
     <div class="container">
       <div class="schedule__wrapper">
         <div class="features__grid">
@@ -10,7 +10,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

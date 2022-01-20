@@ -1,5 +1,5 @@
 <template>
-  <div class="schedule">
+  <section class="schedule">
     <div class="container">
       <div class="schedule__wrapper">
         <div class="schedule__head">
@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

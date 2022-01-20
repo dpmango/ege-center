@@ -1,5 +1,5 @@
 <template>
-  <div class="plan">
+  <section class="plan">
     <div class="container">
       <div class="row plan__wrapper">
         <div class="col col-6">
@@ -43,7 +43,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
