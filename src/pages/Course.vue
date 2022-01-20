@@ -1,10 +1,12 @@
 <template>
   <LayoutLanding>
     <Hero />
-    <StudyPlan />
-    <Schedule />
-    <Features />
-    <Reports />
+    <StaticStudyPlan />
+    <StaticSchedule />
+    <StaticFeatures />
+    <StaticReports />
+    <StaticCabinet />
+    <StaticOnline />
 
     <CtaSignup />
     <Gallery :slides="content.gallery" />

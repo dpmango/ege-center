@@ -4,7 +4,11 @@
       <div class="reports__row row">
         <div class="col col-6">
           <div class="reports__image">
-            <img src="/static/reports.png" srcset="/static/reports@2x.png 2x" alt="" />
+            <img
+              src="/static/img/static/reports.png"
+              srcset="/static/img/static/reports@2x.png 2x"
+              alt=""
+            />
           </div>
         </div>
         <div class="col col-6">
@@ -40,7 +44,7 @@ export default {
 
 <style lang="scss" scoped>
 .reports {
-  padding: 115px 0 105px 0;
+  margin: 115px 0 105px 0;
 
   &__row {
     align-items: center;

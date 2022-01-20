@@ -39,7 +39,7 @@
         </div>
 
         <div class="col col-6">
-          <div class="plan__image"><img src="/static/studyPlan_decor.svg" alt="" /></div>
+          <div class="plan__image"><img src="/static/img/static/studyPlan_decor.svg" alt="" /></div>
         </div>
       </div>
     </div>

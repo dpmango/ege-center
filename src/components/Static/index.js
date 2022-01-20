@@ -1,6 +1,15 @@
-import StudyPlan from "./StudyPlan"
-import Schedule from "./Schedule"
-import Features from "./Features"
-import Reports from "./Reports"
+import StaticStudyPlan from "./StudyPlan"
+import StaticSchedule from "./Schedule"
+import StaticFeatures from "./Features"
+import StaticReports from "./Reports"
+import StaticCabinet from "./Cabinet"
+import StaticOnline from "./Online"
 
-export { StudyPlan, Schedule, Features, Reports }
+export {
+  StaticStudyPlan,
+  StaticSchedule,
+  StaticFeatures,
+  StaticReports,
+  StaticCabinet,
+  StaticOnline,
+}

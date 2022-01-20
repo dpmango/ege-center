@@ -25,7 +25,11 @@
 
     <div class="hero__image">
       <div class="hero__image-scaler">
-        <img src="static/hero_course.jpg" srcset="static/hero_course@2x.jpg 2x" alt="Hero image" />
+        <img
+          src="static/img/hero/hero_course.jpg"
+          srcset="static/img/hero/hero_course@2x.jpg 2x"
+          alt="Hero image"
+        />
         <div class="hero__image-caption">
           <h5 class="h5-title">Тюрин Дмитрий Александрович</h5>
           <p>
