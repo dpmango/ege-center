@@ -28,13 +28,18 @@
                 <span class="plan__stat-value">1</span>
                 <span class="plan__stat-label">Занятие <br />в неделю</span>
               </div>
+              <div class="plan__stat">
+                <span class="plan__stat-value">125</span>
+                <span class="plan__stat-label">Минут <br />длится урок</span>
+              </div>
             </div>
 
-            <p class="p-regular c-light">
+            <UiButton theme="accent">подробная программа курса</UiButton>
+            <!-- <p class="p-regular c-light">
               Длительность занятий: <span class="c-gray w-500">2 ч 5 мин</span>
             </p>
 
-            <a href="#" class="iconed-link"> Узнать подробнее <SvgIcon name="arrow-right" /></a>
+            <a href="#" class="iconed-link"> Узнать подробнее <SvgIcon name="arrow-right" /></a> -->
           </div>
         </div>
 
@@ -81,6 +86,7 @@
 
   &__stats {
     margin-top: 50px;
+    margin-right: -40px;
     margin-bottom: 36px;
     display: flex;
     flex-wrap: wrap;

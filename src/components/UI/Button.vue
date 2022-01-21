@@ -30,7 +30,8 @@ export default {
     theme: {
       type: String,
       default: "primary",
-      validator: (theme) => ["primary", "outline", "danger", "success", "clear"].includes(theme),
+      validator: (theme) =>
+        ["primary", "outline", "accent", "danger", "success", "clear"].includes(theme),
     },
     size: {
       type: String,
@@ -180,6 +181,19 @@ export default {
     }
     &:active {
       background: rgba($colorPrimaryHover, 0.2);
+    }
+  }
+  &.accent {
+    color: #70605a;
+    font-weight: 400;
+    background: rgba(254, 138, 30, 0.2);
+
+    &:hover,
+    &:active {
+      background: rgba(254, 138, 30, 0.4);
+    }
+    &:active {
+      background: rgba(254, 138, 30, 0.3);
     }
   }
   &.danger {

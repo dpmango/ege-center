@@ -2,12 +2,12 @@
   <section class="locations">
     <div class="locations__content">
       <div class="locations__content-wrapper">
-        <h1 class="locations__title h2-title">Адреса наших филиалов</h1>
-
+        <h3 class="locations__title h3-title">Главный корпус</h3>
+        <!-- 
         <p class="locations__subtitle">
           Заключение договоров, оплата обучения производится <br />только в главном корпусе
           ЕГЭ-Центра:
-        </p>
+        </p> -->
 
         <div class="locations__primary">
           <div class="locations__link" @click="() => moveMapToCoords(primaryMetro.station)">
@@ -25,7 +25,7 @@
           </p>
         </div>
 
-        <p class="locations__subtitle">В следующих филиалах проходит только обучение:</p>
+        <h3 class="h3-title">Учебные корпуса</h3>
 
         <div class="locations__list row" v-if="chunkedLocations">
           <div class="col col-6" v-for="(chunk, idx) in chunkedLocations" :key="idx">
@@ -51,6 +51,11 @@
 
     <div class="locations__map">
       <div class="locations__map-scaler">
+        <!-- <img
+          src="/static/img/map/moscowmap.jpg"
+          srcset="/static/img/map/moscowmap@2x.jpg 2x"
+          alt="map image"
+        /> -->
         <yandex-map
           :settings="map.settings"
           :coords="map.coords"
@@ -97,7 +102,7 @@ export default {
           lang: "ru_RU",
         },
         coords: [55.75322, 37.622513],
-        zoom: 10,
+        zoom: 10.4,
         controls: ["zoomControl"],
         defaultMarker: {
           layout: "default#image",
@@ -139,9 +144,10 @@ export default {
     },
   },
   methods: {
-    moveMapToCoords({ lat, lng }) {
+    moveMapToCoords({ lat, lng, id }) {
       this.mapInstance.setCenter([lat, lng])
       this.mapInstance.setZoom(13)
+      // this.mapInstance.objects.balloon.open(id)
     },
     setMapInstance(instance) {
       this.mapInstance = instance
@@ -187,7 +193,17 @@ export default {
     flex-direction: column;
     max-width: 780px;
     position: relative;
-
+    img,
+    picture {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
     ::v-deep .ymap-container {
       flex: 1 1 auto;
     }

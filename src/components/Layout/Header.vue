@@ -118,6 +118,7 @@ export default {
   left: 0;
   right: 0;
   z-index: 9;
+  min-width: 1280px;
   will-change: transform;
   // backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
