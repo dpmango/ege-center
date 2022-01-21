@@ -45,6 +45,14 @@ h6 {
 
 p {
   margin: 0;
+  a {
+    text-decoration: underline;
+    transition: color 0.25s $ease;
+    &:hover {
+      text-decoration: none;
+      color: $colorPrimary;
+    }
+  }
   + p {
     margin-top: 1em;
   }
