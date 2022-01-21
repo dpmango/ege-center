@@ -96,6 +96,11 @@
           </div>
         </div>
       </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copy">© ЕГЭ-Центр, 2015-2021</span>
+        <a class="footer__policy" href="/policy.pdf" target="_blank">Политика конфиденциальности</a>
+      </div>
     </div>
   </footer>
 </template>
@@ -129,7 +134,7 @@ export default {
 <style lang="scss" scoped>
 .footer {
   position: relative;
-  padding: 60px 0;
+  padding: 72px 0 50px;
   background: $colorBg;
   &__top {
     position: relative;
@@ -175,9 +180,9 @@ export default {
   }
 
   &__grid {
-    margin-top: 50px;
+    margin-top: 58px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 328px 1fr 1fr 1fr;
     grid-gap: 30px;
   }
 
@@ -209,19 +214,40 @@ export default {
     margin: 0;
     li {
       flex: 0 0 auto;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
     a {
       position: relative;
       display: inline-block;
       font-size: 16px;
-      padding: 4px 0px;
+      padding: 2px 0px;
       border-radius: 35px;
       color: $colorGray;
       transition: color 0.25s $ease;
       &:hover {
         color: $colorPrimary;
       }
+    }
+  }
+  &__bottom {
+    margin-top: 75px;
+    display: flex;
+    align-items: center;
+  }
+  &__copy {
+    font-size: 14px;
+    color: $colorLight;
+  }
+  &__policy {
+    display: block;
+    margin-left: auto;
+    font-size: 14px;
+    color: $colorLight;
+    text-decoration: underline;
+    transition: color 0.25s $ease;
+    &:hover {
+      text-decoration: none;
+      color: $fontColor;
     }
   }
 }
