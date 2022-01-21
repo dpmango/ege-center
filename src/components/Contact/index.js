@@ -1,3 +1,3 @@
-import ContactLocations from "./Locations"
+import ContactLocations from "./Locations.vue"
 
 export { ContactLocations }

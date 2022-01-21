@@ -55,6 +55,7 @@ export default {
   overflow: hidden;
   padding: 110px 0 115px;
   margin-bottom: 90px;
+  user-select: none;
   &__slider {
     padding: 0px;
     overflow: visible;

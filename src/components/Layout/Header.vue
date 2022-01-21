@@ -84,15 +84,15 @@ export default {
       ],
     }
   },
-  created() {
-    this.scrollWithThrottle = throttle(this.onScroll, 200)
-  },
-  mounted() {
-    window.addEventListener("scroll", this.scrollWithThrottle, false)
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.scrollWithThrottle, false)
-  },
+  // created() {
+  //   this.scrollWithThrottle = throttle(this.onScroll, 200)
+  // },
+  // mounted() {
+  //   window.addEventListener("scroll", this.scrollWithThrottle, false)
+  // },
+  // beforeDestroy() {
+  //   window.removeEventListener("scroll", this.scrollWithThrottle, false)
+  // },
   methods: {
     onScroll() {
       const scrollY = window.scrollY
@@ -255,29 +255,29 @@ export default {
       }
     }
   }
-  &.--scrolled {
-    position: fixed;
-    transform: translate(0, -20px);
-    border-bottom: 1px solid $borderColor;
-    .header__wrapper {
-      padding-bottom: 0;
-    }
-    .header__menu {
-      opacity: 0;
-      transform: translateY(-100%);
-    }
-    &.up {
-      .header__wrapper {
-        padding-bottom: 74px;
-      }
+  // &.--scrolled {
+  //   position: fixed;
+  //   transform: translate(0, -20px);
+  //   border-bottom: 1px solid $borderColor;
+  //   .header__wrapper {
+  //     padding-bottom: 0;
+  //   }
+  //   .header__menu {
+  //     opacity: 0;
+  //     transform: translateY(-100%);
+  //   }
+  //   &.up {
+  //     .header__wrapper {
+  //       padding-bottom: 74px;
+  //     }
 
-      .header__menu {
-        transform: none;
-        padding-bottom: 10px;
-        padding-top: 10px;
-        opacity: 1;
-      }
-    }
-  }
+  //     .header__menu {
+  //       transform: none;
+  //       padding-bottom: 10px;
+  //       padding-top: 10px;
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
 }
 </style>

@@ -130,6 +130,7 @@ export default {
     width: 50%;
     display: flex;
     flex-direction: column;
+    padding-right: calc((100vw - 1280px) / 2 + 32px);
   }
   &__image-scaler {
     flex: 1 0 auto;
