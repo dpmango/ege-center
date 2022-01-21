@@ -2,11 +2,13 @@
   <LayoutLanding>
     <Hero />
     <StaticStudyPlan />
-    <StaticSchedule />
+    <StaticSchedule :schedule="content.schedule" />
     <StaticFeatures />
     <StaticReports />
     <StaticCabinet />
     <StaticOnline />
+    <TestimonialFeatured :testimonial="content.featuredTestimonial" />
+    <TeacherList :list="content.teachers" />
 
     <CtaSignup />
     <Gallery :slides="content.gallery" />

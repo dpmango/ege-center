@@ -6,5 +6,6 @@ import UiRadio from "./Radio"
 import UiToggle from "./Toggle"
 import UiError from "./Error"
 import UiLoader from "./Loader"
+import UiStars from "./Stars"
 
-export { SvgIcon, UiInput, UiButton, UiCheckbox, UiRadio, UiToggle, UiError, UiLoader }
+export { SvgIcon, UiInput, UiButton, UiCheckbox, UiRadio, UiToggle, UiError, UiLoader, UiStars }

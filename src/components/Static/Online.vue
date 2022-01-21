@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .online {
-  margin: 185px 0;
+  margin: 185px 0 80px;
   &__row {
     align-items: center;
   }
