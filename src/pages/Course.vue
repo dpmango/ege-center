@@ -9,9 +9,11 @@
     <StaticOnline />
     <TestimonialFeatured :testimonial="content.featuredTestimonial" />
     <TeacherList :list="content.teachers" />
-
+    <StaticTrialExam />
+    <TestimonialCarousel :list="[...content.testimonials, ...content.testimonials]" />
     <CtaSignup />
     <Gallery :slides="content.gallery" />
+    <ContactLocations />
     <CtaSignup />
   </LayoutLanding>
 </template>

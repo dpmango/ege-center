@@ -7,5 +7,17 @@ import UiToggle from "./Toggle"
 import UiError from "./Error"
 import UiLoader from "./Loader"
 import UiStars from "./Stars"
+import MapBalloon from "./MapBalloon"
 
-export { SvgIcon, UiInput, UiButton, UiCheckbox, UiRadio, UiToggle, UiError, UiLoader, UiStars }
+export {
+  SvgIcon,
+  UiInput,
+  UiButton,
+  UiCheckbox,
+  UiRadio,
+  UiToggle,
+  UiError,
+  UiLoader,
+  UiStars,
+  MapBalloon,
+}

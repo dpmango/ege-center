@@ -7,8 +7,8 @@
 
       <div class="ft__name" v-if="testimonial.author.name">{{ testimonial.author.name }}</div>
 
-      <div class="ft__stars">
-        <UiStars :rating="5" size="big" />
+      <div class="ft__stars" v-if="testimonial.rating">
+        <UiStars :rating="testimonial.rating" size="big" />
       </div>
 
       <div class="ft__body">

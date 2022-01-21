@@ -10,10 +10,10 @@
       </swiper>
 
       <div class="swiperNav">
-        <div class="swiperNav__prev">
+        <div class="swiperNav__prev galleryPrev">
           <SvgIcon name="arrow-nav-left" />
         </div>
-        <div class="swiperNav__next">
+        <div class="swiperNav__next galleryNext">
           <SvgIcon name="arrow-nav-right" />
         </div>
       </div>
@@ -29,8 +29,8 @@ export default {
         slidesPerView: "auto",
         spaceBetween: 25,
         navigation: {
-          nextEl: ".swiperNav__next",
-          prevEl: ".swiperNav__prev",
+          nextEl: ".galleryNext",
+          prevEl: ".galleryPrev",
         },
       },
     }

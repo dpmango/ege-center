@@ -30,6 +30,7 @@ export default {
   .svg-icon {
     font-size: 20px;
     margin: 4px;
+    color: $colorLight;
     &.is-active {
       color: #e4a972;
     }
