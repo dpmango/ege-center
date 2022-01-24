@@ -3,6 +3,20 @@
     <div class="locations__content">
       <div class="locations__content-wrapper">
         <h3 class="locations__title h3-title">Главный корпус</h3>
+        <ul class="locations__features">
+          <li>
+            <SvgIcon name="checkmark" />
+            <span>Обучение</span>
+          </li>
+          <li>
+            <SvgIcon name="checkmark" />
+            <span>Заключение договоров</span>
+          </li>
+          <li>
+            <SvgIcon name="checkmark" />
+            <span>Оплата</span>
+          </li>
+        </ul>
         <!-- 
         <p class="locations__subtitle">
           Заключение договоров, оплата обучения производится <br />только в главном корпусе
@@ -25,7 +39,10 @@
           </p>
         </div>
 
-        <h3 class="h3-title">Учебные корпуса</h3>
+        <h3 class="locations__title h3-title">Учебные корпуса</h3>
+        <ul class="locations__features">
+          <li><SvgIcon name="checkmark" /> <span>Обучение</span></li>
+        </ul>
 
         <div class="locations__list row" v-if="chunkedLocations">
           <div class="col col-6" v-for="(chunk, idx) in chunkedLocations" :key="idx">
@@ -165,7 +182,7 @@ export default {
   background: $colorBg;
   &__content {
     flex: 0 0 50%;
-    padding: 100px 60px 100px calc((100vw - 1280px) / 2 + 32px);
+    padding: 38px 60px 100px calc((100vw - 1280px) / 2 + 32px);
     height: auto;
     display: flex;
     flex-direction: column;
@@ -175,10 +192,33 @@ export default {
   //   // max-width: 520px;
   // }
 
+  &__title {
+    font-size: 30px;
+  }
+
   &__subtitle {
     margin-top: 46px;
     font-weight: 500;
     color: $colorPrimary;
+  }
+
+  &__features {
+    list-style: none;
+    margin: 32px 0;
+    padding: 0;
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      .svg-icon {
+        color: $colorGreen;
+        margin-right: 12px;
+        font-size: 12px;
+      }
+    }
   }
 
   &__map {
@@ -236,13 +276,13 @@ export default {
   }
   &__primary {
     margin-top: 20px;
+    margin-bottom: 60px;
     p {
       margin-top: 10px;
       line-height: 1.65;
     }
   }
   &__list {
-    margin-top: 18px;
     .locations__link {
       font-weight: 400;
       padding: 3px 0;

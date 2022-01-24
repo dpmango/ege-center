@@ -130,7 +130,7 @@ export default {
     width: 50%;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: $colorBg;
     padding-right: calc((100vw - 1280px) / 2 + 32px);
   }
   &__image-scaler {
@@ -173,6 +173,9 @@ export default {
   .hero {
     &__content {
       padding-left: 32px;
+    }
+    &__image {
+      padding-right: 32px;
     }
   }
 }
