@@ -1,5 +1,5 @@
 <template>
-  <section class="exam">
+  <section class="exam" :class="className">
     <div class="container">
       <div class="row exam__wrapper">
         <div class="col col-6">
@@ -31,9 +31,20 @@
   </section>
 </template>
 
+<script>
+export default {
+  props: {
+    className: String,
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 .exam {
   margin: 200px 0 110px 0;
+  &.mt-0 {
+    margin-top: 0px;
+  }
   &__wrapper {
     align-items: center;
   }

@@ -41,6 +41,15 @@ h6 {
   font-size: 16px;
   line-height: 1.8;
   color: $colorGray;
+  a {
+    color: $colorPrimary;
+    text-decoration: underline;
+    transition: color 0.25s $ease;
+    &:hover {
+      text-decoration: none;
+      color: $colorPrimaryHover;
+    }
+  }
 }
 
 p {

@@ -2,11 +2,9 @@
   <section class="signup">
     <div class="container">
       <div class="signup__wrapper">
-        <h2 class="h2-title">
-          Набор на курсы до <span class="c-primary">30 декабря 2021 г.</span>
-        </h2>
+        <h2 class="h2-title">Набор в школу до <span class="c-primary">30 декабря 2021 г.</span></h2>
         <p class="c-gray">Количество мест ограничено. Успейте записаться!</p>
-        <UiButton size="big">Записаться на курсы</UiButton>
+        <UiButton size="big">Записаться на консультацию</UiButton>
       </div>
     </div>
   </section>

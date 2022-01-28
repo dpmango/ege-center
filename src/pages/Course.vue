@@ -1,14 +1,18 @@
 <template>
   <LayoutLanding>
-    <Hero />
+    <HeroCourse />
     <StaticStudyPlan />
-    <StaticSchedule :schedule="content.schedule" />
-    <StaticFeatures />
+    <StaticSchedule
+      label="Расписание занятий"
+      title="Занятия в группах проходят <br/>в следующих интервалах:"
+      :schedule="content.schedule"
+    />
+    <StaticFeatures :list="content.features" />
     <StaticReports />
-    <StaticCabinet />
+    <StaticCabinet />Расписание занятий
     <StaticOnline />
     <TestimonialFeatured :testimonial="content.featuredTestimonial" />
-    <TeacherList :list="content.teachers" />
+    <TeacherList :list="content.teachers" title="Наши преподаватели" />
     <StaticTrialExam />
     <TestimonialCarousel :list="[...content.testimonials, ...content.testimonials]" />
     <CtaSignup />

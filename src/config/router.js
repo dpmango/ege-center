@@ -10,10 +10,30 @@ const router = new Router({
     return { x: 0, y: 0 }
   },
   routes: [
-    { path: "/", redirect: "/course" },
+    { path: "/", component: () => import("@/pages/Home") },
     {
       path: "/course",
       component: () => import("@/pages/Course"),
+    },
+    {
+      path: "/school",
+      component: () => import("@/pages/School"),
+    },
+    {
+      path: "/teachers",
+      component: () => import("@/pages/Teachers"),
+    },
+    // {
+    //   path: "/faq",
+    //   component: () => import("@/pages/Faq"),
+    // },
+    // {
+    //   path: "/docs",
+    //   component: () => import("@/pages/Docs"),
+    // },
+    {
+      path: "/price",
+      component: () => import("@/pages/Price"),
     },
     {
       path: "*",

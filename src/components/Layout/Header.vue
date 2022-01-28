@@ -3,7 +3,7 @@
     <div class="header__wrapper">
       <div class="container">
         <div class="header__top">
-          <div class="header__logo">
+          <router-link to="/" class="header__logo">
             <svg
               width="49"
               height="36"
@@ -29,7 +29,7 @@
               />
             </svg>
             <span>ЕГЭ Центр</span>
-          </div>
+          </router-link>
           <div class="header__subtitle">
             Сеть центров по подготовке школьников 9-11 класса к ОГЭ и ЕГЭ
           </div>
@@ -155,6 +155,13 @@ export default {
       font-size: 24px;
       line-height: (27 / 24);
       color: #000000;
+      transition: color 0.25s $ease;
+    }
+
+    &:hover {
+      span {
+        color: $colorPrimary;
+      }
     }
   }
   &__subtitle {

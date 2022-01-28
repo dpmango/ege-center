@@ -1,12 +1,12 @@
 <template>
-  <section class="features">
+  <section class="features" :class="className">
     <div class="container">
-      <div class="schedule__wrapper">
-        <div class="features__grid">
-          <div class="feature" v-for="feature in features" :key="feature.id">
-            <div class="h1-title c-primary">{{ feature.label }}</div>
-            <p class="p-regular" v-html="feature.description" />
-          </div>
+      <h2 v-if="title" class="features__title h2-title tac">{{ title }}</h2>
+
+      <div class="features__grid">
+        <div class="feature" v-for="feature in list" :key="feature.id">
+          <div class="h1-title c-primary">{{ feature.label }}</div>
+          <p class="p-regular" v-html="feature.description" />
         </div>
       </div>
     </div>
@@ -15,26 +15,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      features: [
-        {
-          id: 1,
-          label: "от 6 до 10",
-          description: "учеников 9-11 класса обучаются ежегодно&nbsp;в&nbsp;ЕГЭ-Центре",
-        },
-        {
-          id: 2,
-          label: "+24 балла",
-          description: "Преподавателей-экспертов ЕГЭ, членов апелляционных комиссий",
-        },
-        {
-          id: 3,
-          label: "столовая",
-          description: "Учебных филиалов ЕГЭ-Центра по всей Москве",
-        },
-      ],
-    }
+  props: {
+    list: Array,
+    title: String,
+    className: String,
   },
 }
 </script>
@@ -43,6 +27,16 @@ export default {
 .features {
   padding: 102px 0 210px 0;
   background: $colorBg;
+  &.bg-white {
+    background: white;
+  }
+  &.pb-100 {
+    padding-bottom: 110px;
+  }
+  &__title {
+    margin-top: -10px;
+    margin-bottom: 70px;
+  }
   &__wrapper {
     align-items: center;
   }

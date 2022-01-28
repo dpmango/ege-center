@@ -1,3 +1,4 @@
 import TeacherList from "./TeacherList"
+import TeacherCard from "./TeacherCard"
 
-export { TeacherList }
+export { TeacherList, TeacherCard }

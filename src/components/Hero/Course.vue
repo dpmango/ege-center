@@ -6,7 +6,7 @@
           Курсы ЕГЭ по <span class="c-primary">обществознанию</span> для 11 класса
         </h1>
 
-        <p class="hero__subtitle" color="gray">90+ баллов набирает наш каждый второй выпускник</p>
+        <p class="hero__subtitle">90+ баллов набирает наш каждый второй выпускник</p>
 
         <div class="hero__actions">
           <UiButton size="big">Записаться на курсы</UiButton>
@@ -26,8 +26,8 @@
     <div class="hero__image">
       <div class="hero__image-scaler">
         <img
-          src="static/img/hero/hero_course.jpg"
-          srcset="static/img/hero/hero_course@2x.jpg 2x"
+          src="/static/img/hero/hero_course.jpg"
+          srcset="/static/img/hero/hero_course@2x.jpg 2x"
           alt="Hero image"
         />
         <div class="hero__image-caption">

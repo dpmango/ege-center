@@ -1,5 +1,5 @@
 <template>
-  <section class="ft">
+  <section class="ft" :class="className">
     <div class="container">
       <div class="ft__avatar" v-if="testimonial.author.avatar">
         <img :src="testimonial.author.avatar" :alt="testimonial.author.name" />
@@ -23,6 +23,7 @@
 export default {
   props: {
     testimonial: Object,
+    className: String,
   },
 }
 </script>
@@ -32,6 +33,9 @@ export default {
   background: $colorBg;
   padding: 100px 0;
   text-align: center;
+  &.bg-white {
+    background: white;
+  }
   &__avatar {
     position: relative;
     z-index: 1;
@@ -40,6 +44,7 @@ export default {
     margin: 0px auto;
     overflow: hidden;
     border-radius: 50%;
+    user-select: none;
     img {
       position: absolute;
       top: 0;

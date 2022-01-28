@@ -134,6 +134,7 @@ export default {
     height: 45px;
     border-radius: 50%;
     overflow: hidden;
+    user-select: none;
     img,
     picture {
       position: absolute;

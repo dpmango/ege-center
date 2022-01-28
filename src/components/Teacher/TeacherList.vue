@@ -1,16 +1,26 @@
 <template>
-  <section class="teachers">
+  <section class="teachers" :class="className">
     <div class="container">
-      <h2 class="h2-title">Наши преподаватели</h2>
+      <h2 class="h2-title">
+        {{ title }} <span class="c-light" v-if="titleCount">{{ titleCount }}</span>
+      </h2>
+
+      <div v-if="subtitle" class="teachers__subtitle p-regular">{{ subtitle }}</div>
 
       <div class="teachers__grid">
-        <div v-for="(teacher, idx) in list" class="teachers__item" :key="idx">
-          <div class="teachers__avatar">
-            <img :src="teacher.avatar" :alt="teacher.name" />
-          </div>
-          <h4 class="teachers__item-name h4-title" v-html="teacher.name" />
-          <div class="teachers__item-description p-regular">{{ teacher.description }}</div>
-        </div>
+        <TeacherCard
+          v-for="(teacher, idx) in list"
+          :key="idx"
+          :avatar="teacher.avatar"
+          :name="teacher.name"
+          :description="teacher.description"
+        />
+      </div>
+
+      <div class="teachers__more" v-if="includeMoreBtn">
+        <router-link to="/teachers">
+          <UiButton size="big">Смотреть всех</UiButton>
+        </router-link>
       </div>
     </div>
   </section>
@@ -23,6 +33,11 @@ export default {
   },
   props: {
     list: Array,
+    title: String,
+    titleCount: String || Number,
+    subtitle: String,
+    includeMoreBtn: Boolean,
+    className: String,
   },
 }
 </script>
@@ -30,40 +45,31 @@ export default {
 <style lang="scss" scoped>
 .teachers {
   margin: 96px 0 115px;
+  &.m0 {
+    margin: 0;
+    .teachers__grid {
+      margin-top: 0;
+    }
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &__subtitle {
+    margin-top: 56px;
+    max-width: 480px;
+  }
   &__grid {
     margin-top: 110px;
     display: grid;
     grid-gap: 125px 0px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  &__item {
-    padding: 0 20px;
-  }
-  &__item-name {
-    margin-top: 60px;
-    line-height: 1.4;
-  }
-  &__item-description {
-    margin-top: 24px;
-    line-height: 1.6;
-  }
-  &__avatar {
-    position: relative;
-    z-index: 1;
-    font-size: 0;
-    width: 210px;
-    height: 210px;
-    border-radius: 50%;
-    overflow: hidden;
-    img,
-    picture {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+
+  &__more {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
   }
 }
 </style>

@@ -1,3 +1,4 @@
 import ContactLocations from "./Locations.vue"
+import ContactSchool from "./School.vue"
 
-export { ContactLocations }
+export { ContactLocations, ContactSchool }

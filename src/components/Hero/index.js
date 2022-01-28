@@ -1,3 +1,4 @@
-import Hero from "./Hero"
+import HeroCourse from "./Course"
+import HeroSchool from "./School"
 
-export { Hero }
+export { HeroCourse, HeroSchool }

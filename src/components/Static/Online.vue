@@ -1,5 +1,5 @@
 <template>
-  <section class="online">
+  <section class="online" :class="className">
     <div class="container">
       <div class="online__row row">
         <div class="col col-6">
@@ -34,12 +34,21 @@ export default {
   data() {
     return {}
   },
+  props: {
+    className: String,
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .online {
   margin: 185px 0 80px;
+  &.mt-20 {
+    margin-top: 20px;
+  }
+  &.mb-150 {
+    margin-bottom: 170px;
+  }
   &__row {
     align-items: center;
   }
