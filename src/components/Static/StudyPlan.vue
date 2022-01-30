@@ -34,7 +34,9 @@
               </div>
             </div>
 
-            <UiButton theme="accent">подробная программа курса</UiButton>
+            <router-link to="course/1">
+              <UiButton theme="accent">подробная программа курса</UiButton>
+            </router-link>
             <!-- <p class="p-regular c-light">
               Длительность занятий: <span class="c-gray w-500">2 ч 5 мин</span>
             </p>

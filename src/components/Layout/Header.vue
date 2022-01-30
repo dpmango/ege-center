@@ -74,7 +74,7 @@ export default {
         direction: "down",
       },
       menu: [
-        { to: "/course", label: "Курсы" },
+        { to: "/courses", label: "Курсы" },
         { to: "/school", label: "Школа-экстернат" },
         { to: "/teachers", label: "Преподаватели" },
         { to: "/faq", label: "Вопрос-ответ" },

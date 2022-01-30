@@ -7864,6 +7864,10 @@ vue-router@^3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.5.3.tgz#041048053e336829d05dafacf6a8fb669a2e7999"
 
+vue-slide-up-down@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/vue-slide-up-down/-/vue-slide-up-down-2.0.1.tgz#4f5ab8610e435c1fa907ca87d5857930bbded157"
+
 vue-spinner@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/vue-spinner/-/vue-spinner-1.0.4.tgz#0e794d9d93acb23b5b6564042157a531e7ce413b"

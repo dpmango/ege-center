@@ -25,6 +25,7 @@
     "vue": "^2.6.14",
     "vue-awesome-swiper": "^4.1.1",
     "vue-router": "^3.5.3",
+    "vue-slide-up-down": "^2.0.1",
     "vue-spinner": "^1.0.4",
     "vue-yandex-maps": "^0.11.0",
     "vuex": "^3.6.2"

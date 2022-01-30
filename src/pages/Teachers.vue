@@ -1,10 +1,10 @@
 <template>
   <LayoutLanding>
-    <div class="page">
+    <div class="teachers">
       <div class="container">
         <h2 class="h2-title">Преподаватели ЕГЭ-Центра</h2>
 
-        <div class="page__subtitle p-regular">
+        <div class="teachers__subtitle p-regular">
           В ЕГЭ-Центре преподают более 60 преподавателей по 10 основным школьным предметам. Среди
           преподавателей: эксперты ЕГЭ и ОГЭ, члены проверочных комиссий ЕГЭ, преподаватели
           московских вузов, школ, гимназий, лицеев.
@@ -39,8 +39,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page {
-  margin: 22px 0 12px;
+.teachers {
+  margin: 44px 0 12px;
   &__subtitle {
     margin-top: 30px;
     max-width: 672px;

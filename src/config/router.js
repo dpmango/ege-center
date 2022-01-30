@@ -12,7 +12,11 @@ const router = new Router({
   routes: [
     { path: "/", component: () => import("@/pages/Home") },
     {
-      path: "/course",
+      path: "/courses",
+      component: () => import("@/pages/Courses"),
+    },
+    {
+      path: "/course/:id",
       component: () => import("@/pages/Course"),
     },
     {
@@ -23,17 +27,29 @@ const router = new Router({
       path: "/teachers",
       component: () => import("@/pages/Teachers"),
     },
-    // {
-    //   path: "/faq",
-    //   component: () => import("@/pages/Faq"),
-    // },
-    // {
-    //   path: "/docs",
-    //   component: () => import("@/pages/Docs"),
-    // },
+    {
+      path: "/faq",
+      component: () => import("@/pages/Faq"),
+    },
+    {
+      path: "/docs",
+      component: () => import("@/pages/Docs"),
+    },
     {
       path: "/price",
       component: () => import("@/pages/Price"),
+    },
+    {
+      path: "/contact",
+      component: () => import("@/pages/Contact"),
+    },
+    {
+      path: "/top-students",
+      component: () => import("@/pages/TopStudents"),
+    },
+    {
+      path: "/study-plans",
+      component: () => import("@/pages/StudyPlans"),
     },
     {
       path: "*",

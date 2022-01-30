@@ -1,10 +1,10 @@
 <template>
   <LayoutLanding>
-    <div class="page">
+    <div class="price">
       <div class="container">
         <h2 class="h2-title">Стоимость</h2>
 
-        <div class="page__subtitle p-regular">
+        <div class="price__subtitle p-regular">
           Скачать <a href="/dogovor.pdf" target="_blank">бланк договора</a> (PDF-файл, 2.3 Мб)
           <br />
           Оплата и заключение договора производится
@@ -156,8 +156,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page {
-  margin: 22px 0 105px;
+.price {
+  margin: 44px 0 105px;
   &__subtitle {
     margin-top: 22px;
     max-width: 672px;

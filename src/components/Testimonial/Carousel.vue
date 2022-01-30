@@ -19,30 +19,7 @@
 
       <swiper ref="mySwiper" class="testimonials__slider" :options="swiperOptions">
         <swiper-slide v-for="(slide, idx) in list" class="testimonials__slide slide" :key="idx">
-          <div class="slide__head">
-            <div class="slide__avatar">
-              <img :src="slide.author.avatar" :alt="slide.author.name" />
-            </div>
-            <div class="slide__head-content">
-              <span class="f-700">{{ slide.author.name }}</span>
-              <small v-if="slide.author.position">{{ slide.author.position }}</small>
-            </div>
-          </div>
-
-          <div class="slide__rating" v-if="slide.rating">
-            <UiStars :rating="slide.rating" />
-          </div>
-
-          <div class="slide__content" v-if="slide.content">
-            <p v-html="slide.content" />
-          </div>
-
-          <div class="slide__subject" v-if="slide.subject">
-            {{ slide.subject }}
-          </div>
-          <div class="slide__date" v-if="slide.date">
-            {{ slide.date }}
-          </div>
+          <TestimonialCard :data="slide" />
         </swiper-slide>
       </swiper>
     </div>
@@ -104,68 +81,6 @@ export default {
       margin-top: 20px;
       line-height: $defaultLineHeight;
     }
-  }
-}
-
-.slide {
-  background: #ffffff;
-  box-shadow: 0px 0px 40px 6px rgba(110, 112, 175, 0.05);
-  border-radius: 20px;
-  padding: 48px 40px 42px;
-  &__head {
-    display: flex;
-    align-items: center;
-  }
-  &__head-content {
-    display: flex;
-    flex-direction: column;
-    padding-left: 22px;
-    small {
-      font-size: 14px;
-      color: $colorLight;
-    }
-  }
-  &__avatar {
-    flex: 0 0 auto;
-    position: relative;
-    z-index: 1;
-    font-size: 0;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    overflow: hidden;
-    user-select: none;
-    img,
-    picture {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  &__rating {
-    margin-top: 30px;
-  }
-  &__content {
-    margin-top: 20px;
-    p {
-      font-size: 15px;
-      line-height: 1.8;
-      color: $colorGray;
-    }
-  }
-  &__subject {
-    margin-top: 16px;
-    font-size: 14px;
-    font-weight: 500;
-    color: $colorPrimary;
-  }
-  &__date {
-    margin-top: 20px;
-    font-size: 14px;
-    color: $colorLight;
   }
 }
 

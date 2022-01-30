@@ -89,7 +89,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    className: String,
+  },
+}
 </script>
 
 <style lang="scss" scoped>
