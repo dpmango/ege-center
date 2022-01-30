@@ -1,5 +1,6 @@
 export * from "./Layout"
 export * from "./UI"
+export * from "./Modal"
 export * from "./Hero"
 export * from "./Static"
 export * from "./Cta"

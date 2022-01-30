@@ -13,7 +13,7 @@
             Также на базе ЕГЭ-Центра работает утренняя школа для учеников 10 и 11 классов,
             <br />выдающая аттестаты государственного образца
           </p>
-          <UiButton size="big">Записаться на курсы</UiButton>
+          <UiButton size="big" @click="() => setModal('signup')">Записаться на курсы</UiButton>
         </div>
 
         <div class="banner__image banner__image--right">
@@ -25,9 +25,14 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex"
+
 export default {
   data() {
     return {}
+  },
+  methods: {
+    ...mapMutations("ui", ["setModal"]),
   },
 }
 </script>

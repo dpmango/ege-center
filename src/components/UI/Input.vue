@@ -169,9 +169,6 @@ export default {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    ::v-deep i {
-      color: $colorPrimary;
-    }
   }
 
   &__input {
@@ -182,8 +179,8 @@ export default {
       -webkit-appearance: none;
       display: block;
       width: 100%;
-      padding: 13px 18px 13px;
-      border: 1.5px solid $borderColor;
+      padding: 15px 12px 15px;
+      border: 1px solid rgba(0, 0, 0, 0.26);
       background: white;
       border-radius: 4px;
       font-family: $baseFont;
@@ -290,7 +287,7 @@ export default {
     margin-top: 10px;
     font-size: 14px;
     line-height: 120%;
-    color: $colorPrimary;
+    color: $colorRed;
     & + .input__helper {
       margin-top: 0;
     }
@@ -316,11 +313,14 @@ export default {
   &.dynamic {
     .input__label {
       position: absolute;
-      top: 19px;
-      left: 16px;
-      font-size: 14px;
-      font-weight: 500;
-      color: $colorGray;
+      top: 15px;
+      left: 12px;
+      padding-left: 2px;
+      padding-right: 2px;
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.38);
+      background: white;
       z-index: 2;
       pointer-events: none;
       transition: all 0.25s ease-in-out;
@@ -328,20 +328,18 @@ export default {
     .input__input {
       input,
       textarea {
-        padding-top: 23px;
+        padding-top: 16px;
         padding-bottom: 10px;
       }
     }
     &.is-focused {
       .input__label {
-        top: 8px;
-        font-size: 11px;
+        top: -7px;
       }
     }
     &.has-error {
       .input__label {
-        top: 8px;
-        font-size: 11px;
+        top: -7px;
       }
     }
     &.is-iconed.left {
@@ -357,13 +355,5 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance: none;
-}
-
-@include r($md) {
-  .input {
-    &__label {
-      font-size: 16px;
-    }
-  }
 }
 </style>

@@ -20,14 +20,6 @@ const veeValidate = (app) => {
     message: "Неправильный формат телефона",
   })
 
-  extend("plateNumber", {
-    validate: (value) => {
-      const reg = /^[A-Z]{1}[0-9]{3}[A-Z]{2}[0-9]{2,3}$/
-      return value.match(reg)
-    },
-    message: "Неправильный формат госномера",
-  })
-
   app.component("ValidationProvider", ValidationProvider)
   app.component("ValidationObserver", ValidationObserver)
 }

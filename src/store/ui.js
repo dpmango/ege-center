@@ -1,6 +1,7 @@
 import { getApiService } from "@/api/external"
 
 const state = () => ({
+  activeModal: null,
   opened: false,
 })
 
@@ -13,6 +14,9 @@ const getters = {
 const mutations = {
   setOpened(state, payload) {
     state.opened = payload
+  },
+  setModal(state, name) {
+    state.activeModal = name
   },
 }
 

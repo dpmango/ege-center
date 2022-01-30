@@ -6,11 +6,21 @@
           Набор на курсы до <span class="c-primary">30 декабря 2021 г.</span>
         </h2>
         <p class="c-gray">Количество мест ограничено. Успейте записаться!</p>
-        <UiButton size="big">Записаться на курсы</UiButton>
+        <UiButton size="big" @click="() => setModal('signup')">Записаться на курсы</UiButton>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+import { mapMutations } from "vuex"
+
+export default {
+  methods: {
+    ...mapMutations("ui", ["setModal"]),
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .signup {

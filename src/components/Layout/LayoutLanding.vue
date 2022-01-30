@@ -4,6 +4,7 @@
       <Header />
       <slot />
       <Footer />
+      <ModalSignup />
     </div>
   </div>
 </template>

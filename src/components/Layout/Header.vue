@@ -41,7 +41,9 @@
             </div>
 
             <div class="header__cta-action">
-              <UiButton theme="outline" outline>Записаться на курсы</UiButton>
+              <UiButton theme="outline" outline @click="() => setModal('signup')">
+                Записаться на курсы
+              </UiButton>
             </div>
           </div>
         </div>
@@ -50,7 +52,10 @@
           <div class="container">
             <ul class="header__menu-list">
               <li v-for="(menuElement, idx) in menu" :key="idx">
-                <router-link :to="menuElement.to">
+                <router-link
+                  :to="menuElement.to"
+                  @mouseenter.native="() => handleMouseEnter(menuElement.submenu)"
+                >
                   {{ menuElement.label }}
                 </router-link>
               </li>
@@ -59,28 +64,106 @@
         </div>
       </div>
     </div>
+
+    <!-- submenu -->
+    <div
+      class="submenu"
+      :class="activeSubmenu === 1 && 'is-active'"
+      v-scroll-lock="activeSubmenu === 1"
+    >
+      <div class="container">
+        <div class="submenu__grid">
+          <div class="submenu__col" v-for="(menu, idx) in submenu" :key="idx">
+            <div class="submenu__title">{{ menu.title }}</div>
+            <ul class="submenu__list">
+              <li v-for="(link, idx) in menu.list" :key="idx">
+                <a :href="link.to">{{ link.label }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="header__overlay"
+      :class="activeSubmenu && 'is-active'"
+      @mouseenter="() => handleMouseEnter(null)"
+    ></div>
   </header>
 </template>
 
 <script>
 import throttle from "lodash/throttle"
+import { mapMutations } from "vuex"
 
 export default {
   data() {
     return {
+      activeSubmenu: null,
       scroll: {
         scrolled: false,
         lastScroll: 0,
         direction: "down",
       },
       menu: [
-        { to: "/courses", label: "Курсы" },
+        { to: "/courses", label: "Курсы", submenu: 1 },
         { to: "/school", label: "Школа-экстернат" },
         { to: "/teachers", label: "Преподаватели" },
         { to: "/faq", label: "Вопрос-ответ" },
         { to: "/docs", label: "Документы" },
         { to: "/price", label: "Стоимость" },
         { to: "/contact", label: "Адреса" },
+      ],
+      submenu: [
+        {
+          title: "Курсы ЕГЭ для 11 класса",
+          list: [
+            { to: "/course/1", label: "Математика" },
+            { to: "/course/1", label: "Физика" },
+            { to: "/course/1", label: "Химия" },
+            { to: "/course/1", label: "Биология" },
+            { to: "/course/1", label: "История" },
+            { to: "/course/1", label: "Обществознание" },
+            { to: "/course/1", label: "Русский язык" },
+            { to: "/course/1", label: "Литература" },
+            { to: "/course/1", label: "Информатика" },
+            { to: "/course/1", label: "Английский язык" },
+            { to: "/course/1", label: "Итоговое сочинение" },
+          ],
+        },
+        {
+          title: "Курсы ЕГЭ для 10 класса",
+          list: [
+            { to: "/course/1", label: "Математика" },
+            { to: "/course/1", label: "Физика" },
+            { to: "/course/1", label: "Химия" },
+            { to: "/course/1", label: "Биология" },
+            { to: "/course/1", label: "История" },
+            { to: "/course/1", label: "Обществознание" },
+            { to: "/course/1", label: "Русский язык" },
+            { to: "/course/1", label: "Английский язык" },
+          ],
+        },
+        {
+          title: "Курсы ОГЭ для 9 класса",
+          list: [
+            { to: "/course/1", label: "Математика" },
+            { to: "/course/1", label: "Физика" },
+            { to: "/course/1", label: "Химия" },
+            { to: "/course/1", label: "Биология" },
+            { to: "/course/1", label: "История" },
+            { to: "/course/1", label: "Обществознание" },
+            { to: "/course/1", label: "Русский язык" },
+            { to: "/course/1", label: "Английский язык" },
+          ],
+        },
+        {
+          title: "Другое",
+          list: [
+            { to: "/study-plans", label: "Учебные планы" },
+            { to: "/", label: "Пробный ЕГЭ" },
+          ],
+        },
       ],
     }
   },
@@ -93,6 +176,9 @@ export default {
   // beforeDestroy() {
   //   window.removeEventListener("scroll", this.scrollWithThrottle, false)
   // },
+  computed: {
+    // ...mapState("ui", ["activeModal"]),
+  },
   methods: {
     onScroll() {
       const scrollY = window.scrollY
@@ -107,6 +193,16 @@ export default {
 
       this.scroll.lastScroll = scrollY
     },
+    handleMouseEnter(id) {
+      if (id) {
+        // document.body.classList.add("body-lock")
+        this.activeSubmenu = id
+      } else {
+        // document.body.classList.remove("body-lock")
+        this.activeSubmenu = null
+      }
+    },
+    ...mapMutations("ui", ["setModal"]),
   },
 }
 </script>
@@ -125,6 +221,7 @@ export default {
   transition: transform 0.25s $ease;
   &__wrapper {
     position: relative;
+    z-index: 3;
     background: white;
     padding-bottom: 104px;
     will-change: padding;
@@ -263,6 +360,22 @@ export default {
       }
     }
   }
+  &__overlay {
+    position: fixed;
+    z-index: 1;
+    top: 195px;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s $ease;
+    &.is-active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
   // &.--scrolled {
   //   position: fixed;
   //   transform: translate(0, -20px);
@@ -287,5 +400,53 @@ export default {
   //     }
   //   }
   // }
+}
+
+.submenu {
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 16px 0;
+  box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.15);
+  will-change: transform;
+  backface-visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s $ease;
+  &.is-active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  &__grid {
+    display: flex;
+  }
+  &__col {
+    flex: 0 1 278px;
+    padding-right: 30px;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  &__list {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+    li {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    a {
+      color: $colorGray;
+      transition: color 0.25s $ease;
+      &:hover {
+        color: $colorPrimary;
+      }
+    }
+  }
 }
 </style>

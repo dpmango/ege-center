@@ -35,10 +35,7 @@ export default {
       type: Boolean,
       required: false,
     },
-    label: {
-      type: String,
-      required: false,
-    },
+
     error: {
       type: [String, Boolean],
       required: false,
@@ -67,19 +64,20 @@ export default {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-
   &__label {
     position: relative;
     z-index: 2;
     font-size: 14px;
-    padding-left: 12px;
+    padding-left: 18px;
+    color: $colorGray;
     cursor: pointer;
     transition: opacity 0.25s $ease;
     a {
-      color: $colorPrimary;
+      text-decoration: underline;
       transition: color 0.25s $ease;
       &:hover {
-        color: $colorPrimaryHover;
+        text-decoration: none;
+        color: $colorPrimary;
       }
     }
     &:hover {
@@ -112,19 +110,27 @@ export default {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 22px;
-    height: 22px;
-    background: #ededed;
-    border-radius: 2px;
-    border: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #cbcbcb;
     color: white;
-    transition: background 0.25s $ease;
+    transition: background 0.25s $ease, border 0.25s $ease;
     .svg-icon {
       font-size: 10px;
       opacity: 0;
       transform: scale(0);
       will-change: transform;
       transition: opacity 0.25s $ease, transform 0.25s $ease;
+    }
+  }
+  &.has-error {
+    .checkbox {
+      &__input-box {
+        background: $colorRed;
+        border-color: $colorRed;
+      }
     }
   }
 }

@@ -9,7 +9,7 @@
         <p class="hero__subtitle">90+ баллов набирает наш каждый второй выпускник</p>
 
         <div class="hero__actions">
-          <UiButton size="big">Записаться на курсы</UiButton>
+          <UiButton size="big" @click="() => setModal('signup')">Записаться на курсы</UiButton>
           <div class="hero__start">
             <div class="hero__start-icon">
               <SvgIcon name="play" />
@@ -45,11 +45,16 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex"
+
 export default {
   data() {
     return {
       publicPath: process.env.BASE_URL,
     }
+  },
+  methods: {
+    ...mapMutations("ui", ["setModal"]),
   },
 }
 </script>

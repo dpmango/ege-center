@@ -1,5 +1,6 @@
 import SvgIcon from "./SvgIcon"
 import UiInput from "./Input"
+import UiSelect from "./Select"
 import UiButton from "./Button"
 import UiCheckbox from "./Checkbox"
 import UiRadio from "./Radio"
@@ -12,6 +13,7 @@ import MapBalloon from "./MapBalloon"
 export {
   SvgIcon,
   UiInput,
+  UiSelect,
   UiButton,
   UiCheckbox,
   UiRadio,
