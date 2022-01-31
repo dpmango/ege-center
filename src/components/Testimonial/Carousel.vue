@@ -3,7 +3,6 @@
     <div class="container">
       <div class="testimonials__head">
         <div>
-          {{ swiperOptions }}
           <div class="testimonials__label" v-if="label">{{ label }}</div>
           <h2 class="h2-title" v-if="title" v-html="title" />
         </div>
