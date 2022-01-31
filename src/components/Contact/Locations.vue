@@ -182,7 +182,7 @@ export default {
   background: $colorBg;
   &__content {
     flex: 0 0 50%;
-    padding: 38px 60px 100px calc((100vw - 1280px) / 2 + 32px);
+    padding: 38px 60px 100px calc((100vw - 1240px) / 2 + 35px);
     height: auto;
     display: flex;
     flex-direction: column;
@@ -226,7 +226,7 @@ export default {
     width: 50%;
     display: flex;
     flex-direction: column;
-    padding-right: calc((100vw - 1280px) / 2 + 32px);
+    padding-right: calc((100vw - 1240px) / 2 + 35px);
   }
   &__map-scaler {
     flex: 1 0 auto;
@@ -300,13 +300,13 @@ export default {
   border-radius: 50%;
 }
 
-@include r(1280) {
+@include r(1240) {
   .locations {
     &__content {
-      padding-left: 32px;
+      padding-left: 35px;
     }
     &__map {
-      padding-right: 32px;
+      padding-right: 35px;
     }
   }
 }

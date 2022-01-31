@@ -59,10 +59,9 @@ export default {
   background: $colorBg;
   &__content {
     flex: 0 0 50%;
-    padding: 42px 60px 20px calc((100vw - 1280px) / 2 + 32px);
-    height: calc(100vh - 190px);
-    min-height: 440px;
-    max-height: 570px;
+    padding: 42px 60px 20px calc((100vw - 1240px) / 2 + 35px);
+    height: 100%;
+    min-height: 570px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,7 +110,7 @@ export default {
     display: flex;
     flex-direction: column;
     background: $colorBg;
-    padding-right: calc((100vw - 1280px) / 2 + 32px);
+    padding-right: calc((100vw - 1240px) / 2 + 35px);
   }
   &__image-scaler {
     flex: 1 0 auto;
@@ -149,13 +148,13 @@ export default {
   }
 }
 
-@include r(1280) {
+@include r(1240) {
   .hero {
     &__content {
-      padding-left: 32px;
+      padding-left: 35px;
     }
     &__image {
-      padding-right: 32px;
+      padding-right: 35px;
     }
   }
 }

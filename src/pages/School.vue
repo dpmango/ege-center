@@ -21,7 +21,11 @@
     />
     <TestimonialFeatured :testimonial="content.featuredTestimonial" />
     <StaticStages />
-    <TestimonialCarousel :list="[...content.testimonials, ...content.testimonials]" />
+    <TestimonialCarousel
+      label="Отзывы"
+      title='Что говорят о нас <span class="c-light">5347 отзывов</span>'
+      :list="[...content.testimonials, ...content.testimonials]"
+    />
     <StaticDocuments />
     <ContactSchool />
     <CtaSignupSchool />

@@ -47,6 +47,7 @@ export default {
     cursor: pointer;
     transition: color 0.25s $ease;
     .svg-icon {
+      flex: 0 0 auto;
       margin-left: auto;
       font-size: 8px;
       color: #757575;

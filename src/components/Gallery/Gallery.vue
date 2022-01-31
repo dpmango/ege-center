@@ -88,6 +88,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
   &__prev,
   &__next {
     position: static;

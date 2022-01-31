@@ -2,20 +2,48 @@
   <LayoutLanding>
     <div class="students">
       <div class="container">
-        <h1 class="h2-title">100 лучших учеников</h1>
-
-        <div class="students__grid row">
-          <div class="students__col" v-for="(col, idx) in gridRows" :key="idx">
-            <TestimonialCard v-for="(testimonial, idx) in col" :key="idx" :data="testimonial" />
-          </div>
+        <div class="students__head">
+          <h1 class="h2-title">100 лучших учеников</h1>
+          <p class="p-regular">
+            Ученики сдавшие ЕГЭ и ОГЭ нга самые высокие былим среди многих тысяч ученикорв
+            отучившихся за последние годы. Ученики сдавшие ЕГЭ и ОГЭ нга самые высокие былим среди
+            многих тысяч ученикорв отучившихся за последние годы. Ученики сдавшие ЕГЭ и ОГЭ нга
+            самые высокие былим среди многих тысяч ученикорв отучившихся за последние годы.
+          </p>
         </div>
+      </div>
+
+      <div class="students__grid">
+        <TestimonialCarousel
+          title="9 класс"
+          className="compact"
+          :list="[...content.testimonials, ...content.testimonials]"
+        />
+
+        <TestimonialCarousel
+          title="10 класс"
+          className="compact"
+          :list="[...content.testimonials, ...content.testimonials]"
+        />
+
+        <TestimonialCarousel
+          title="11 класс"
+          className="compact"
+          :list="[...content.testimonials, ...content.testimonials]"
+        />
+
+        <TestimonialCarousel
+          title="Школа-экстернат"
+          className="compact"
+          :list="[...content.testimonials, ...content.testimonials]"
+        />
       </div>
     </div>
   </LayoutLanding>
 </template>
 
 <script>
-import chunk from "lodash/chunk"
+// import chunk from "lodash/chunk"
 import content from "./JSON_data/topstudents"
 
 export default {
@@ -26,11 +54,10 @@ export default {
     }
   },
   computed: {
-    gridRows() {
-      const cols = 3
-
-      return chunk(this.content.testimonials, Math.floor(this.content.testimonials.length / cols))
-    },
+    // gridRows() {
+    //   const cols = 3
+    //   return chunk(this.content.testimonials, Math.floor(this.content.testimonials.length / cols))
+    // },
   },
 }
 </script>
@@ -38,23 +65,14 @@ export default {
 <style lang="scss" scoped>
 .students {
   margin-top: 44px;
-  margin-bottom: 105px;
-  &__grid {
-    margin: 28px -20px -20px;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  &__col {
-    width: 100%;
-    flex: 0 0 $col4;
-    max-width: $col4;
-    padding: 20px;
-    .testimonialCard {
-      margin-bottom: 40px;
-      &:last-child {
-        margin-bottom: 0;
-      }
+  &__head {
+    p {
+      margin-top: 44px;
+      line-height: 1.5;
     }
+  }
+  &__grid {
+    margin-top: 52px;
   }
 }
 </style>

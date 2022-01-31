@@ -15,6 +15,7 @@
           <a
             href="https://www.instagram.com/egecentr_msk"
             target="_blank"
+            class="insta__photo"
             v-for="(photo, idx) in photos"
             :key="idx"
           >
@@ -111,14 +112,22 @@ export default {
     grid-gap: 20px;
   }
   &__photo {
+    display: inline-block;
     position: relative;
     z-index: 1;
+    padding-bottom: 100%;
+    width: 141px;
     border-radius: 5px;
     overflow: hidden;
     font-size: 0;
     user-select: none;
     img {
-      max-width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }

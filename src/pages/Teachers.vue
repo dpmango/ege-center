@@ -57,7 +57,7 @@ export default {
   }
   ::v-deep .teachers__grid {
     grid-gap: 72px 0;
-    margin: 0 -20px;
+    margin-top: 0;
   }
 }
 </style>

@@ -137,24 +137,3 @@ p {
 .tar {
   text-align: right;
 }
-
-// tables
-.table-scroller {
-  display: flex;
-  position: relative;
-  overflow-x: auto;
-  padding-bottom: 15px;
-  margin-bottom: -15px;
-  margin-left: -30px;
-  margin-right: -30px;
-  padding-left: 30px;
-  padding-right: 30px;
-  &.has-scrollbar {
-    &::after {
-      flex: 0 0 30px;
-      width: 30px;
-      display: inline-block;
-      content: " ";
-    }
-  }
-}

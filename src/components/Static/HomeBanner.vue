@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .banner {
-  margin: 145px 0 80px;
+  margin: 125px 0 80px;
   &__row {
     display: flex;
   }
@@ -48,10 +48,10 @@ export default {
     text-align: center;
     padding: 0 30px;
     p {
-      margin-top: 44px;
+      margin-top: 36px;
     }
     button {
-      margin-top: 65px;
+      margin-top: 54px;
     }
   }
   &__image {
@@ -62,13 +62,11 @@ export default {
       max-width: 100%;
     }
     &--left {
-      width: 276px;
-      margin-left: -30px;
+      width: 226px;
     }
     &--right {
-      width: 240px;
-      margin-right: -20px;
-      margin-top: -45px;
+      width: 205px;
+      margin-top: -20px;
     }
   }
 }

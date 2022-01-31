@@ -114,9 +114,11 @@ export default {
         padding: 15px 26px 16px;
         &:first-child {
           border-top-left-radius: 10px;
+          padding-left: 0;
         }
         &:last-child {
           border-top-right-radius: 10px;
+          padding-right: 0;
         }
       }
     }
@@ -125,6 +127,12 @@ export default {
         font-size: 16px;
         padding: 32px 26px 39px;
         color: $colorGray;
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
       }
       tr:last-child td {
         border-bottom: 0;

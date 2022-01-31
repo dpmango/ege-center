@@ -1,17 +1,18 @@
 <template>
-  <section class="testimonials">
+  <section class="testimonials" :class="className">
     <div class="container">
       <div class="testimonials__head">
         <div>
-          <div class="testimonials__label">Отзывы</div>
-          <h2 class="h2-title">Что говорят о нас <span class="c-light">5347 отзывов</span></h2>
+          {{ swiperOptions }}
+          <div class="testimonials__label" v-if="label">{{ label }}</div>
+          <h2 class="h2-title" v-if="title" v-html="title" />
         </div>
 
         <div class="swiperNav">
-          <div class="swiperNav__prev testimonialsPrev">
+          <div :class="`swiperNav__prev testimonialsPrev_${uid}`">
             <SvgIcon name="arrow-nav-left" />
           </div>
-          <div class="swiperNav__next testimonialsNext">
+          <div :class="`swiperNav__next testimonialsNext_${uid}`">
             <SvgIcon name="arrow-nav-right" />
           </div>
         </div>
@@ -27,6 +28,8 @@
 </template>
 
 <script>
+import uniqueId from "lodash/uniqueId"
+
 export default {
   data() {
     return {
@@ -34,22 +37,31 @@ export default {
         slidesPerView: "auto",
         spaceBetween: 20,
         navigation: {
-          nextEl: ".testimonialsNext",
-          prevEl: ".testimonialsPrev",
+          // nextEl: `.testimonialsNext_${this.uid}`,
+          // prevEl: `.testimonialsPrev_${this.uid}`,
         },
       },
     }
   },
   props: {
     list: Array,
+    label: String,
+    title: String,
+    className: String,
+  },
+  created() {
+    this.swiperOptions.navigation = {
+      nextEl: `.testimonialsNext_${this.uid}`,
+      prevEl: `.testimonialsPrev_${this.uid}`,
+    }
   },
   computed: {
+    uid() {
+      return uniqueId()
+    },
     swiper() {
       return this.$refs.mySwiper.$swiper
     },
-  },
-  mounted() {
-    // this.swiper.slideTo(3, 1000, false)
   },
 }
 </script>
@@ -60,6 +72,12 @@ export default {
   overflow: hidden;
   background: $colorBg;
   padding: 105px 0 125px;
+  &.compact {
+    padding: 50px 0 80px 0px;
+    .testimonials__head {
+      align-items: center;
+    }
+  }
   &__label {
     font-weight: 500;
     color: $colorGreen;
@@ -91,6 +109,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
   &__prev,
   &__next {
     position: static;

@@ -53,7 +53,7 @@ export default {
     max-width: 480px;
   }
   &__grid {
-    margin-top: 110px;
+    margin: 110px -20px 0;
     display: grid;
     grid-gap: 125px 0px;
     grid-template-columns: 1fr 1fr 1fr 1fr;

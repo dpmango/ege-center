@@ -198,9 +198,11 @@ export default {
       padding: 15px 26px 16px;
       &:first-child {
         border-top-left-radius: 10px;
+        padding-left: 0;
       }
       &:last-child {
         border-top-right-radius: 10px;
+        padding-right: 0;
       }
     }
   }
@@ -213,6 +215,7 @@ export default {
         margin-top: 0.67em;
       }
       &:first-child {
+        padding-left: 0;
         p + p {
           margin-top: 1.4em;
         }
@@ -221,6 +224,9 @@ export default {
         p + p {
           margin-top: 1.4em;
         }
+      }
+      &:last-child {
+        padding-right: 0;
       }
     }
     tr:last-child td {
@@ -232,9 +238,6 @@ export default {
     width: 25%;
     border-right: 1px solid #cbcbcb;
     border-bottom: 1px solid #cbcbcb;
-    &:last-child {
-      border-right: 0;
-    }
   }
 }
 </style>
