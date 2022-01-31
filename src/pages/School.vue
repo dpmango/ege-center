@@ -18,7 +18,6 @@
       :list="content.teachers"
       title="Преподаватели экстерната"
       subtitle="Сильнейшая команда преподавателей ЕГЭ-Центра, которая ежедневно работает на результат учеников"
-      :includeMoreBtn="true"
     />
     <TestimonialFeatured :testimonial="content.featuredTestimonial" />
     <StaticStages />

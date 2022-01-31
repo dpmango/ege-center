@@ -16,12 +16,6 @@
           :description="teacher.description"
         />
       </div>
-
-      <div class="teachers__more" v-if="includeMoreBtn">
-        <router-link to="/teachers">
-          <UiButton size="big">Смотреть всех</UiButton>
-        </router-link>
-      </div>
     </div>
   </section>
 </template>
@@ -36,7 +30,6 @@ export default {
     title: String,
     titleCount: String || Number,
     subtitle: String,
-    includeMoreBtn: Boolean,
     className: String,
   },
 }
@@ -64,12 +57,6 @@ export default {
     display: grid;
     grid-gap: 125px 0px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
-  &__more {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
   }
 }
 </style>

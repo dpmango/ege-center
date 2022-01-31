@@ -12,6 +12,13 @@
         <div class="hero__actions">
           <UiButton size="big">Записаться на консультацию</UiButton>
         </div>
+
+        <div class="hero__start">
+          <div class="hero__start-icon">
+            <SvgIcon name="checkmark" />
+          </div>
+          <div class="hero__start-content">Запись на курсы до <span>22 ноября 2021 г.</span></div>
+        </div>
       </div>
     </div>
 
@@ -71,6 +78,31 @@ export default {
 
   &__actions {
     margin-top: 60px;
+  }
+
+  &__start {
+    margin-top: 54px;
+    display: flex;
+    align-items: center;
+  }
+  &__start-icon {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    font-size: 0;
+    color: #3eb24a;
+    .svg-icon {
+      font-size: 12px;
+    }
+  }
+
+  &__start-content {
+    color: $colorGray;
+    font-size: 16px;
+    span {
+      font-weight: 500;
+      font-size: 18px;
+      color: $fontColor;
+    }
   }
 
   &__image {

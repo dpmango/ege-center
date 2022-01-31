@@ -106,11 +106,11 @@ export default {
     border-collapse: collapse;
     thead {
       td {
-        background: #f6f6fc;
+        // background: #f6f6fc;
         font-weight: bold;
         font-size: 20px;
         color: #141f3c;
-        border-bottom: 0;
+        border-bottom: 1px solid #cbcbcb;
         padding: 15px 26px 16px;
         &:first-child {
           border-top-left-radius: 10px;
@@ -132,7 +132,7 @@ export default {
     }
     td {
       vertical-align: top;
-      border-right: 1px solid #cbcbcb;
+      // border-right: 1px solid #cbcbcb;
       border-bottom: 1px solid #cbcbcb;
       &:nth-child(1) {
         width: 21%;

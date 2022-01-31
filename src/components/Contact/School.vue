@@ -147,6 +147,7 @@ export default {
     width: 50%;
     display: flex;
     flex-direction: column;
+    padding-right: calc((100vw - 1280px) / 2 + 32px);
   }
   &__map-scaler {
     flex: 1 0 auto;
@@ -217,6 +218,9 @@ export default {
   .locations {
     &__content {
       padding-left: 32px;
+    }
+    &__map {
+      padding-right: 32px;
     }
   }
 }

@@ -14,7 +14,6 @@
       title="Кто наши преподаватели"
       titleCount="61"
       subtitle="Сильнейшая команда преподавателей ЕГЭ-Центра, которая ежедневно работает на результат учеников"
-      :includeMoreBtn="true"
     />
     <StaticTrialExam className="mt-0" />
     <TestimonialCarousel :list="[...content.testimonials, ...content.testimonials]" />

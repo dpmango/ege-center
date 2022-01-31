@@ -10,15 +10,13 @@
 
         <div class="hero__actions">
           <UiButton size="big" @click="() => setModal('signup')">Записаться на курсы</UiButton>
-          <div class="hero__start">
-            <div class="hero__start-icon">
-              <SvgIcon name="play" />
-            </div>
-            <div class="hero__start-content">
-              <p class="c-light">Начало занятий</p>
-              <p class="hero__start-date">22 ноября 2021 г.</p>
-            </div>
+        </div>
+
+        <div class="hero__start">
+          <div class="hero__start-icon">
+            <SvgIcon name="checkmark" />
           </div>
+          <div class="hero__start-content">Запись на курсы до <span>22 ноября 2021 г.</span></div>
         </div>
       </div>
     </div>
@@ -97,37 +95,28 @@ export default {
   }
 
   &__start {
-    margin-bottom: 24px;
+    margin-top: 54px;
     display: flex;
     align-items: center;
   }
   &__start-icon {
     flex: 0 0 auto;
-    width: 52px;
-    height: 52px;
-    margin-right: 16px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: $colorGreenMint;
-    box-shadow: -4px 15px 20px -8px rgba(98, 154, 133, 0.12);
+    margin-right: 10px;
+    font-size: 0;
+    color: #3eb24a;
     .svg-icon {
-      color: $colorGreen;
-      font-size: 16px;
+      font-size: 12px;
     }
   }
+
   &__start-content {
-    flex: 0 0 auto;
-    span {
-      font-size: 18px;
-    }
-  }
-  &__start-date {
-    margin-top: 4px;
-    font-weight: 500;
-    font-size: 18px;
     color: $colorGray;
+    font-size: 16px;
+    span {
+      font-weight: 500;
+      font-size: 18px;
+      color: $fontColor;
+    }
   }
 
   &__image {

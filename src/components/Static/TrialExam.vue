@@ -17,7 +17,9 @@
               психологически более готовым.
             </p>
 
-            <a href="#" class="iconed-link"> Узнать подробнее <SvgIcon name="arrow-right" /></a>
+            <router-link to="course/1">
+              <UiButton theme="accent" class="exam__cta">узнать подробнее</UiButton>
+            </router-link>
           </div>
         </div>
 
@@ -60,29 +62,12 @@ export default {
         margin-top: 34px;
       }
     }
-    .iconed-link {
-      margin-top: 48px;
-    }
   }
-
+  &__cta {
+    margin-top: 48px;
+  }
   &__image {
     text-align: center;
-  }
-}
-
-.iconed-link {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  font-weight: bold;
-  text-decoration: underline;
-  transition: color 0.25s $ease;
-  .svg-icon {
-    margin-left: 15px;
-    font-size: 11px;
-  }
-  &:hover {
-    color: $colorPrimary;
   }
 }
 </style>
