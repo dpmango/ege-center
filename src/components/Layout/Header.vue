@@ -1,6 +1,6 @@
 <template>
   <header class="header" :class="[scroll.scrolled && '--scrolled', scroll.direction]">
-    <div class="header__wrapper">
+    <div class="header__wrapper" @click="() => handleMouseEnter(null)">
       <div class="container">
         <div class="header__top">
           <router-link to="/" class="header__logo">
@@ -50,11 +50,21 @@
 
         <div class="header__menu">
           <div class="container">
-            <ul class="header__menu-list">
+            <ul class="header__menu-list" @click.stop.prevent>
               <li v-for="(menuElement, idx) in menu" :key="idx">
+                <a
+                  href="#"
+                  :class="[activeSubmenu === menuElement.submenu && 'is-active']"
+                  v-if="menuElement.submenu && activeSubmenu !== menuElement.submenu"
+                  @click="() => handleMouseEnter(menuElement.submenu)"
+                >
+                  {{ menuElement.label }}
+                </a>
                 <router-link
+                  v-else
                   :to="menuElement.to"
-                  @mouseenter.native="() => handleMouseEnter(menuElement.submenu)"
+                  :class="[activeSubmenu === menuElement.submenu && 'is-active']"
+                  @click="() => handleMouseEnter(null)"
                 >
                   {{ menuElement.label }}
                 </router-link>
@@ -87,7 +97,7 @@
     <div
       class="header__overlay"
       :class="activeSubmenu && 'is-active'"
-      @mouseenter="() => handleMouseEnter(null)"
+      @click="() => handleMouseEnter(null)"
     ></div>
   </header>
 </template>
@@ -352,7 +362,8 @@ export default {
           opacity: 1;
         }
       }
-      &.router-link-exact-active {
+      &.router-link-exact-active,
+      &.is-active {
         color: $fontColor;
         &::after {
           opacity: 1;
@@ -415,7 +426,7 @@ export default {
   backface-visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s $ease;
+  // transition: opacity 0.25s $ease;
   &.is-active {
     opacity: 1;
     pointer-events: all;

@@ -145,8 +145,6 @@
           <div class="form__cta">
             <UiButton type="submit" size="big">Отправить заявку</UiButton>
           </div>
-
-          <div class="h3-title">Набор <span class="c-primary">до 4 декабря 2021 г.</span></div>
         </ValidationObserver>
       </div>
     </div>
@@ -216,26 +214,26 @@ export default {
   right: 0;
   bottom: 0;
   pointer-events: none;
-  opacity: 0;
-  backface-visibility: hidden;
-  transition: opacity 0.25s $ease;
   &__wrapper {
     flex: 1 0 auto;
     height: 100%;
     position: relative;
     display: flex;
     justify-content: flex-end;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    will-change: background;
+    transition: background 0.25s $ease;
   }
   &__body {
     position: relative;
     width: 100%;
     background: white;
-    max-width: 720px;
-    padding: 30px 80px;
+    max-width: 630px;
+    padding: 30px 35px;
     transform: translate3d(100%, 0, 0);
-    will-change: transform;
     overflow-x: auto;
+    will-change: transform;
     backface-visibility: hidden;
     transition: transform 0.25s $ease;
   }
@@ -243,7 +241,7 @@ export default {
     position: absolute;
     z-index: 2;
     top: 28px;
-    right: 70px;
+    right: 28px;
     font-size: 0;
     padding: 10px;
     cursor: pointer;
@@ -264,10 +262,12 @@ export default {
     color: $colorGray;
   }
   &.is-active {
-    opacity: 1;
     pointer-events: all;
+    .modal__wrapper {
+      background: rgba(0, 0, 0, 0.15);
+    }
     .modal__body {
-      transform: none;
+      transform: translate3d(0, 0, 0);
     }
   }
 }
@@ -297,7 +297,6 @@ export default {
   }
   &__cta {
     margin-top: 44px;
-    margin-bottom: 42px;
   }
 }
 </style>
