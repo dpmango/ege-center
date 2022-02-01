@@ -1,6 +1,6 @@
 <template>
   <header class="header" :class="[scroll.scrolled && '--scrolled', scroll.direction]">
-    <div class="header__wrapper" @click="() => handleMouseEnter(null)">
+    <div class="header__wrapper" @click="() => handleSubmenuOpener(null)">
       <div class="container">
         <div class="header__top">
           <router-link to="/" class="header__logo">
@@ -56,7 +56,7 @@
                   href="#"
                   :class="[activeSubmenu === menuElement.submenu && 'is-active']"
                   v-if="menuElement.submenu && activeSubmenu !== menuElement.submenu"
-                  @click="() => handleMouseEnter(menuElement.submenu)"
+                  @click="() => handleSubmenuOpener(menuElement.submenu)"
                 >
                   {{ menuElement.label }}
                 </a>
@@ -64,7 +64,7 @@
                   v-else
                   :to="menuElement.to"
                   :class="[activeSubmenu === menuElement.submenu && 'is-active']"
-                  @click="() => handleMouseEnter(null)"
+                  @click.native="() => handleSubmenuOpener(null)"
                 >
                   {{ menuElement.label }}
                 </router-link>
@@ -97,7 +97,7 @@
     <div
       class="header__overlay"
       :class="activeSubmenu && 'is-active'"
-      @click="() => handleMouseEnter(null)"
+      @click="() => handleSubmenuOpener(null)"
     ></div>
   </header>
 </template>
@@ -203,10 +203,13 @@ export default {
 
       this.scroll.lastScroll = scrollY
     },
-    handleMouseEnter(id) {
+    handleSubmenuOpener(id) {
       if (id) {
-        // document.body.classList.add("body-lock")
-        this.activeSubmenu = id
+        if (this.activeSubmenu === id) {
+          this.activeSubmenu = null
+        } else {
+          this.activeSubmenu = id
+        }
       } else {
         // document.body.classList.remove("body-lock")
         this.activeSubmenu = null

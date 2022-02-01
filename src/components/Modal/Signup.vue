@@ -110,28 +110,34 @@
             </div>
           </div>
 
-          <ValidationProvider v-slot="{ errors }" class="form__group" rules="required">
-            <UiInput
-              :value="name"
-              theme="dynamic"
-              label="Ваше имя"
-              type="text"
-              :error="errors[0]"
-              @onChange="(v) => (name = v)"
-            />
-          </ValidationProvider>
+          <div class="row">
+            <div class="col col-6">
+              <ValidationProvider v-slot="{ errors }" class="form__group" rules="required">
+                <UiInput
+                  :value="name"
+                  theme="dynamic"
+                  label="Ваше имя"
+                  type="text"
+                  :error="errors[0]"
+                  @onChange="(v) => (name = v)"
+                />
+              </ValidationProvider>
+            </div>
 
-          <ValidationProvider v-slot="{ errors }" class="form__group" rules="required|tel">
-            <UiInput
-              v-mask="'+7 (###) ###-####'"
-              :value="phone"
-              theme="dynamic"
-              label="Ваш телефон"
-              type="tel"
-              :error="errors[0]"
-              @onChange="(v) => (phone = v)"
-            />
-          </ValidationProvider>
+            <div class="col col-6">
+              <ValidationProvider v-slot="{ errors }" class="form__group" rules="required|tel">
+                <UiInput
+                  v-mask="'+7 (###) ###-####'"
+                  :value="phone"
+                  theme="dynamic"
+                  label="Ваш телефон"
+                  type="tel"
+                  :error="errors[0]"
+                  @onChange="(v) => (phone = v)"
+                />
+              </ValidationProvider>
+            </div>
+          </div>
 
           <div class="form_error" v-if="error">{{ error }}</div>
 
