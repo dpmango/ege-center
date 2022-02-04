@@ -238,7 +238,7 @@ export default {
     max-width: 630px;
     padding: 30px 35px;
     transform: translate3d(100%, 0, 0);
-    overflow-x: auto;
+    overflow-y: auto;
     will-change: transform;
     backface-visibility: hidden;
     transition: transform 0.25s $ease;
